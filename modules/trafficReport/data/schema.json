@@ -1,0 +1,15 @@
+{
+    "deviceId": "device123",
+    "data": [
+        {
+            "timestamp": "2024-09-30T12:00:00Z",
+            "group": "provider1",
+            "mbps": 150
+        },
+        {
+            "timestamp": "2024-09-30T13:00:00Z",
+            "group": "provider1",
+            "mbps": 200
+        }
+    ]
+}

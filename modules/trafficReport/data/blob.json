@@ -1,0 +1,54 @@
+{
+    "_id" : "report-simple",
+    "reportCompiled" : "------ Status actual del tráfico -------
+
+Proveedores:
+
+📌 Fibex (40 Gbps): 18.725 Mbps`
+📌 Cogent (50 Gbps): 24.329 Mbps`
+📌 Total Proveedores 43.054 Mbps
+
+Transportes:
+
+📌 Fibex-Valencia (50 Gbps): 25.762 Mbps
+📌 Fibex-Caribe (4 Gbps): 1.762 Mbps
+📌 Fibex-Pto. Cabello (6 Gbps): 2.650 Mbps
+📌 Dayco - NetUno (18 Gbps) : 7.965 Mbps
+📌 Caribe - NetUno (8 Gbps) : 3.571 Mbps
+📌 Pto. Cabello - Digitel (4 Gbps): 1.745 Mbps
+📌 Caribe - Digitel (1 Gbps): 294 Mbps
+📌 Valencia - Digitel (1 Gbps): 0 Mbps
+📌 Guacara - Netcom Plus ( 20 Gbps): 6.275 Mbps
+📌 Mirador - Netcom Plus (10 Gbps): 2.846 Mbps
+
+BNG:
+
+📌BNG 1: 3.426 Mbps
+📌BNG 2: 32.392 Mbps
+
+FTTH:
+
+📌 Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3): 6.349 Mbps
+📌 Los Parques - INYC (OLT 4-9-10-11-12 + OLT ZTE CARD 13): 3.622 Mbps
+📌 Paseo - Parque Valencia (OLT 1): 1.523 Mbps
+📌 Paseo - Isabelica, La Quizanda (OLT 2): 503 Mbps
+📌 Paseo - Guajiros, Santa Rosa (OLT 3): 775 Mbps
+📌 Shangri LA(OLT-1-2-3): 2.090 Mbps
+📌 Fundacion Mendoza (OLT-1-2-3-4): 4.307 Mbps
+📌 Mirador(OLT-1-2): 1.736 Mbps
+📌 Mango Shopping(OLT-1-2): 811 Mbps
+📌 Guacara (OLT-1-2-3-4-5): 5.650 Mbps
+📌 Los Guayos (OLT-1-2): 812 Mbps
+📌 Paraparal (OLT-3-4-5-6-7-8-9): 1.402 Mbps
+📌 Isla Larga: 817 Mbps
+📌 Torre Ejecutiva (OLT-1-2-3-4): 2.381 Mbps
+📌 La Sorpresa(OLT-1-2-3): 706 Mbps
+📌 Caribe (OLT-1-2-3-4-6): 3.976 Mbps
+📌 La Morita(OLT-5): 714 Mbps
+📌 Cagua(OLT-1-2-3-4-5): 794 Mbps
+📌 San Joaquín(OLT-1-2-3): 573 Mbps
+📌 Torre Movilnet (OLT-1-2): 281 Mbps
+📌 Tocuyito (OLT-1): 454 Mbps
+
+-------- Estadísticas de las 11:50 p. m. ---------"
+}

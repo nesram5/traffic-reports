@@ -1,0 +1,1478 @@
+[
+  {
+    "deviceId": "Prov-Fibex",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Fibex (40 Gbps)",
+        "name": "Fibex (40 Gbps)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Fibex (40 Gbps)",
+        "type": "Proveedores",
+        "name": "Fibex (40 Gbps)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "Prov-Globenet",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Cogent (50 Gbps)",
+        "name": "Cogent (50 Gbps)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Cogent (50 Gbps)",
+        "type": "Proveedores",
+        "name": "Cogent (50 Gbps)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "TD-Fibex-Val",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Fibex-Valencia (50 Gbps)",
+        "name": "Fibex-Valencia (50 Gbps)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Fibex-Valencia (50 Gbps)",
+        "type": "Transportes",
+        "name": "Fibex-Valencia (50 Gbps)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "TD-Fibex-Maracay",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Fibex-Caribe (4 Gbps)",
+        "name": "Fibex-Caribe (4 Gbps)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Fibex-Caribe (4 Gbps)",
+        "type": "Transportes",
+        "name": "Fibex-Caribe (4 Gbps)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "TD-Fibex-PC-IL",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Fibex-Pto. Cabello (6 Gbps)",
+        "name": "Fibex-IL Pto. Cabello (6 Gbps)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Fibex-Pto. Cabello (6 Gbps)",
+        "type": "Transportes",
+        "name": "Fibex-IL Pto. Cabello (6 Gbps)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "TD-Fibex-PC-IL-BAK",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Fibex-Pto. Cabello (6 Gbps)",
+        "name": "Fibex-IL Backup Pto. Cabello (6 Gbps)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Fibex-Pto. Cabello (6 Gbps)",
+        "type": "Transportes",
+        "name": "Fibex-IL Backup Pto. Cabello (6 Gbps)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "TD-Fibex-PC-TE",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Fibex-Pto. Cabello (6 Gbps)",
+        "name": "Fibex-TE Pto. Cabello (6 Gbps)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Fibex-Pto. Cabello (6 Gbps)",
+        "type": "Transportes",
+        "name": "Fibex-TE Pto. Cabello (6 Gbps)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "TD-NetUno-Val",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Dayco - NetUno (18 Gbps)",
+        "name": "Dayco - NetUno (18 Gbps)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Dayco - NetUno (18 Gbps)",
+        "type": "Transportes",
+        "name": "Dayco - NetUno (18 Gbps)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "TD-NetUno-Mcy",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Caribe - NetUno (8 Gbps)",
+        "name": "Caribe - NetUno (8 Gbps)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Caribe - NetUno (8 Gbps)",
+        "type": "Transportes",
+        "name": "Caribe - NetUno (8 Gbps)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "TD-Digitel-PC-TE",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Pto. Cabello - Digitel (4 Gbps)",
+        "name": "Pto. Cabello - Digitel (4 Gbps)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Pto. Cabello - Digitel (4 Gbps)",
+        "type": "Transportes",
+        "name": "Pto. Cabello - Digitel (4 Gbps)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "TD-Digitel-CEC",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Caribe - Digitel (1 Gbps)",
+        "name": "Caribe - Digitel (1 Gbps)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Caribe - Digitel (1 Gbps)",
+        "type": "Transportes",
+        "name": "Caribe - Digitel (1 Gbps)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "TD-Digitel-Val",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Valencia - Digitel (1 Gbps)",
+        "name": "Valencia - Digitel (1 Gbps)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Valencia - Digitel (1 Gbps)",
+        "type": "Transportes",
+        "name": "Valencia - Digitel (1 Gbps)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "TD-Dayco-GUA",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Guacara - Netcom Plus ( 20 Gbps)",
+        "name": "Guacara - Netcom Plus ( 20 Gbps)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Guacara - Netcom Plus ( 20 Gbps)",
+        "type": "Transportes",
+        "name": "Guacara - Netcom Plus ( 20 Gbps)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "TD-Dayco-MRD",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Mirador - Netcom Plus (10 Gbps)",
+        "name": "Mirador - Netcom Plus (10 Gbps)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Mirador - Netcom Plus (10 Gbps)",
+        "type": "Transportes",
+        "name": "Mirador - Netcom Plus (10 Gbps)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "BNG-01",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "BNG 1",
+        "name": "BNG 1",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "BNG 1",
+        "type": "BNG",
+        "name": "BNG 1",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "BNG-02",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "BNG 2",
+        "name": "BNG 2",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "BNG 2",
+        "type": "BNG",
+        "name": "BNG 2",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-LP-01",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3)",
+        "name": "Los Parques - NETCOM (OLT ZTE CARD 1-3)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3)",
+        "type": "FTTH",
+        "name": "Los Parques - NETCOM (OLT ZTE CARD 1-3)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-LP-06",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3)",
+        "name": "Los Parques - NETCOM (OLT-6)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3)",
+        "type": "FTTH",
+        "name": "Los Parques - NETCOM (OLT-6)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-LP-07",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3)",
+        "name": "Los Parques - NETCOM (OLT-7)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3)",
+        "type": "FTTH",
+        "name": "Los Parques - NETCOM (OLT-7)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-LP-08",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3)",
+        "name": "Los Parques - NETCOM (OLT-8)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3)",
+        "type": "FTTH",
+        "name": "Los Parques - NETCOM (OLT-8)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-LP-13",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3)",
+        "name": "Los Parques - NETCOM (OLT-13)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3)",
+        "type": "FTTH",
+        "name": "Los Parques - NETCOM (OLT-13)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-LP-04",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 13)",
+        "name": "Los Parques - INYC (OLT-4)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 13)",
+        "type": "FTTH",
+        "name": "Los Parques - INYC (OLT-4)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-LP-09",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 13)",
+        "name": "Los Parques - INYC (OLT-9)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 13)",
+        "type": "FTTH",
+        "name": "Los Parques - INYC (OLT-9)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-LP-10",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 13)",
+        "name": "Los Parques - INYC (OLT-10)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 13)",
+        "type": "FTTH",
+        "name": "Los Parques - INYC (OLT-10)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-LP-11",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 13)",
+        "name": "Los Parques - INYC (OLT-11)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 13)",
+        "type": "FTTH",
+        "name": "Los Parques - INYC (OLT-11)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-LP-12",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 13)",
+        "name": "Los Parques - INYC (OLT-12)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 13)",
+        "type": "FTTH",
+        "name": "Los Parques - INYC (OLT-12)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-PLI-01",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Paseo - Parque Valencia (OLT 1)",
+        "name": "Paseo - Parque Valencia (OLT 1)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Paseo - Parque Valencia (OLT 1)",
+        "type": "FTTH",
+        "name": "Paseo - Parque Valencia (OLT 1)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-PLI-02",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Paseo - Isabelica, La Quizanda (OLT 2)",
+        "name": "Paseo - Isabelica, La Quizanda (OLT 2)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Paseo - Isabelica, La Quizanda (OLT 2)",
+        "type": "FTTH",
+        "name": "Paseo - Isabelica, La Quizanda (OLT 2)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-PLI-03",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Paseo - Guajiros, Santa Rosa (OLT 3)",
+        "name": "Paseo - Guajiros, Santa Rosa (OLT 3)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Paseo - Guajiros, Santa Rosa (OLT 3)",
+        "type": "FTTH",
+        "name": "Paseo - Guajiros, Santa Rosa (OLT 3)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-SLA-01",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Shangri LA(OLT-1-2-3)",
+        "name": "Shangri LA (OLT-1)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Shangri LA(OLT-1-2-3)",
+        "type": "FTTH",
+        "name": "Shangri LA (OLT-1)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-SLA-02",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Shangri LA(OLT-1-2-3)",
+        "name": "Shangri LA (OLT-2)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Shangri LA(OLT-1-2-3)",
+        "type": "FTTH",
+        "name": "Shangri LA (OLT-2)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-SLA-03",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Shangri LA(OLT-1-2-3)",
+        "name": "Shangri LA (OLT-3)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Shangri LA(OLT-1-2-3)",
+        "type": "FTTH",
+        "name": "Shangri LA (OLT-3)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-FM-01",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Fundacion Mendoza (OLT-1-2-3-4)",
+        "name": "Fundacion Mendoza (OLT-1)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Fundacion Mendoza (OLT-1-2-3-4)",
+        "type": "FTTH",
+        "name": "Fundacion Mendoza (OLT-1)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-FM-02",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Fundacion Mendoza (OLT-1-2-3-4)",
+        "name": "Fundacion Mendoza (OLT-2)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Fundacion Mendoza (OLT-1-2-3-4)",
+        "type": "FTTH",
+        "name": "Fundacion Mendoza (OLT-2)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-FM-03",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Fundacion Mendoza (OLT-1-2-3-4)",
+        "name": "Fundacion Mendoza (OLT-3)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Fundacion Mendoza (OLT-1-2-3-4)",
+        "type": "FTTH",
+        "name": "Fundacion Mendoza (OLT-3)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-FM-04",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Fundacion Mendoza (OLT-1-2-3-4)",
+        "name": "Fundacion Mendoza (OLT-4)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Fundacion Mendoza (OLT-1-2-3-4)",
+        "type": "FTTH",
+        "name": "Fundacion Mendoza (OLT-4)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-MRD-01",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Mirador(OLT-1-2)",
+        "name": "Mirador(OLT-1)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Mirador(OLT-1-2)",
+        "type": "FTTH",
+        "name": "Mirador(OLT-1)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-MRD-02",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Mirador(OLT-1-2)",
+        "name": "Mirador(OLT-2)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Mirador(OLT-1-2)",
+        "type": "FTTH",
+        "name": "Mirador(OLT-2)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-MGS-01",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Mango Shopping(OLT-1-2)",
+        "name": "Mango Shopping(OLT-1)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Mango Shopping(OLT-1-2)",
+        "type": "FTTH",
+        "name": "Mango Shopping(OLT-1)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-MGS-02",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Mango Shopping(OLT-1-2)",
+        "name": "Mango Shopping(OLT-1)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Mango Shopping(OLT-1-2)",
+        "type": "FTTH",
+        "name": "Mango Shopping(OLT-1)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-GUA-01",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Guacara (OLT-1-2-3-4-5)",
+        "name": "Guacara (OLT-1)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Guacara (OLT-1-2-3-4-5)",
+        "type": "FTTH",
+        "name": "Guacara (OLT-1)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-GUA-02",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Guacara (OLT-1-2-3-4-5)",
+        "name": "Guacara (OLT-2)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Guacara (OLT-1-2-3-4-5)",
+        "type": "FTTH",
+        "name": "Guacara (OLT-2)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-GUA-03",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Guacara (OLT-1-2-3-4-5)",
+        "name": "Guacara (OLT-3)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Guacara (OLT-1-2-3-4-5)",
+        "type": "FTTH",
+        "name": "Guacara (OLT-3)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-GUA-04",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Guacara (OLT-1-2-3-4-5)",
+        "name": "Guacara (OLT-4)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Guacara (OLT-1-2-3-4-5)",
+        "type": "FTTH",
+        "name": "Guacara (OLT-4)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-GUA-05",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Guacara (OLT-1-2-3-4-5)",
+        "name": "Guacara (OLT-5)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Guacara (OLT-1-2-3-4-5)",
+        "type": "FTTH",
+        "name": "Guacara (OLT-5)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-GUA-06",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Guacara (OLT-1-2-3-4-5)",
+        "name": "Guacara (OLT-6)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Guacara (OLT-1-2-3-4-5)",
+        "type": "FTTH",
+        "name": "Guacara (OLT-6)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-GYS-01",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Los Guayos (OLT-1-2)",
+        "name": "Los Guayos (OLT-1)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Los Guayos (OLT-1-2)",
+        "type": "FTTH",
+        "name": "Los Guayos (OLT-1)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-GYS-02",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Los Guayos (OLT-1-2)",
+        "name": "Los Guayos (OLT-2)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Los Guayos (OLT-1-2)",
+        "type": "FTTH",
+        "name": "Los Guayos (OLT-2)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-GYS-03",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
+        "name": "Paraparal (OLT-3)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
+        "type": "FTTH",
+        "name": "Paraparal (OLT-3)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-GYS-04",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
+        "name": "Paraparal (OLT-4)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
+        "type": "FTTH",
+        "name": "Paraparal (OLT-4)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-GYS-05",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
+        "name": "Paraparal (OLT-5)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
+        "type": "FTTH",
+        "name": "Paraparal (OLT-5)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-GYS-06",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
+        "name": "Paraparal (OLT-6)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
+        "type": "FTTH",
+        "name": "Paraparal (OLT-6)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-GYS-07",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
+        "name": "Paraparal (OLT-7)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
+        "type": "FTTH",
+        "name": "Paraparal (OLT-7)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-GYS-08",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
+        "name": "Paraparal (OLT-8)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
+        "type": "FTTH",
+        "name": "Paraparal (OLT-8)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-GYS-09",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
+        "name": "Paraparal (OLT-9)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
+        "type": "FTTH",
+        "name": "Paraparal (OLT-9)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-IL-01",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Isla Larga",
+        "name": "Isla Larga",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Isla Larga",
+        "type": "FTTH",
+        "name": "Isla Larga",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-TE-01",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Torre Ejecutiva (OLT-1-2-3-4)",
+        "name": "Torre Ejecutiva (OLT-1)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Torre Ejecutiva (OLT-1-2-3-4)",
+        "type": "FTTH",
+        "name": "Torre Ejecutiva (OLT-1)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-TE-02",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Torre Ejecutiva (OLT-1-2-3-4)",
+        "name": "Torre Ejecutiva (OLT-2)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Torre Ejecutiva (OLT-1-2-3-4)",
+        "type": "FTTH",
+        "name": "Torre Ejecutiva (OLT-2)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-TE-03",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Torre Ejecutiva (OLT-1-2-3-4)",
+        "name": "Torre Ejecutiva (OLT-3)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Torre Ejecutiva (OLT-1-2-3-4)",
+        "type": "FTTH",
+        "name": "Torre Ejecutiva (OLT-3)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-TE-04",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Torre Ejecutiva (OLT-1-2-3-4)",
+        "name": "Torre Ejecutiva (OLT-4)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Torre Ejecutiva (OLT-1-2-3-4)",
+        "type": "FTTH",
+        "name": "Torre Ejecutiva (OLT-4)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-LSP-01",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "La Sorpresa(OLT-1-2-3)",
+        "name": "La Sorpresa(OLT-1)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "La Sorpresa(OLT-1-2-3)",
+        "type": "FTTH",
+        "name": "La Sorpresa(OLT-1)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-LSP-02",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "La Sorpresa(OLT-1-2-3)",
+        "name": "La Sorpresa(OLT-2)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "La Sorpresa(OLT-1-2-3)",
+        "type": "FTTH",
+        "name": "La Sorpresa(OLT-2)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-LSP-03",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "La Sorpresa(OLT-1-2-3)",
+        "name": "La Sorpresa(OLT-3)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "La Sorpresa(OLT-1-2-3)",
+        "type": "FTTH",
+        "name": "La Sorpresa(OLT-3)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-CEC-01",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Caribe (OLT-1-2-3-4-6)",
+        "name": "Caribe (OLT-1)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Caribe (OLT-1-2-3-4-6)",
+        "type": "FTTH",
+        "name": "Caribe (OLT-1)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-CEC-02",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Caribe (OLT-1-2-3-4-6)",
+        "name": "Caribe (OLT-2)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Caribe (OLT-1-2-3-4-6)",
+        "type": "FTTH",
+        "name": "Caribe (OLT-2)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-CEC-03",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Caribe (OLT-1-2-3-4-6)",
+        "name": "Caribe (OLT-3)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Caribe (OLT-1-2-3-4-6)",
+        "type": "FTTH",
+        "name": "Caribe (OLT-3)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-CEC-04",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Caribe (OLT-1-2-3-4-6)",
+        "name": "Caribe (OLT-4)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Caribe (OLT-1-2-3-4-6)",
+        "type": "FTTH",
+        "name": "Caribe (OLT-4)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-CEC-06",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Caribe (OLT-1-2-3-4-6)",
+        "name": "Caribe (OLT-6)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Caribe (OLT-1-2-3-4-6)",
+        "type": "FTTH",
+        "name": "Caribe (OLT-6)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-CEC-05",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "La Morita(OLT-5)",
+        "name": "La Morita(OLT-5)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "La Morita(OLT-5)",
+        "type": "FTTH",
+        "name": "La Morita(OLT-5)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-CGA-01",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Cagua(OLT-1-2-3-4-5)",
+        "name": "Cagua (OLT-1)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Cagua(OLT-1-2-3-4-5)",
+        "type": "FTTH",
+        "name": "Cagua (OLT-1)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-CGA-02",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Cagua(OLT-1-2-3-4-5)",
+        "name": "Cagua (OLT-2)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Cagua(OLT-1-2-3-4-5)",
+        "type": "FTTH",
+        "name": "Cagua (OLT-2)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-CGA-03",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Cagua(OLT-1-2-3-4-5)",
+        "name": "Cagua (OLT-3)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Cagua(OLT-1-2-3-4-5)",
+        "type": "FTTH",
+        "name": "Cagua (OLT-3)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-CGA-04",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Cagua(OLT-1-2-3-4-5)",
+        "name": "Cagua (OLT-4)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Cagua(OLT-1-2-3-4-5)",
+        "type": "FTTH",
+        "name": "Cagua (OLT-4)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-CGA-05",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Cagua(OLT-1-2-3-4-5)",
+        "name": "Cagua (OLT-5)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Cagua(OLT-1-2-3-4-5)",
+        "type": "FTTH",
+        "name": "Cagua (OLT-5)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-CGA-06",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Cagua(OLT-1-2-3-4-5)",
+        "name": "Cagua (OLT-6)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Cagua(OLT-1-2-3-4-5)",
+        "type": "FTTH",
+        "name": "Cagua (OLT-6)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-CGA-07",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Cagua(OLT-1-2-3-4-5)",
+        "name": "Cagua (OLT-7)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Cagua(OLT-1-2-3-4-5)",
+        "type": "FTTH",
+        "name": "Cagua (OLT-7)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-SJQ-01",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "San Joaquín(OLT-1-2-3)",
+        "name": "San Joaquín(OLT-1)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "San Joaquín(OLT-1-2-3)",
+        "type": "FTTH",
+        "name": "San Joaquín(OLT-1)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-SJQ-02",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "San Joaquín(OLT-1-2-3)",
+        "name": "San Joaquín(OLT-2)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "San Joaquín(OLT-1-2-3)",
+        "type": "FTTH",
+        "name": "San Joaquín(OLT-2)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-SJQ-03",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "San Joaquín(OLT-1-2-3)",
+        "name": "San Joaquín(OLT-3)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "San Joaquín(OLT-1-2-3)",
+        "type": "FTTH",
+        "name": "San Joaquín(OLT-3)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-TM-01",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Torre Movilnet (OLT-1-2)",
+        "name": "Torre Movilnet (OLT-1)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Torre Movilnet (OLT-1-2)",
+        "type": "FTTH",
+        "name": "Torre Movilnet (OLT-1)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-TM-02",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Torre Movilnet (OLT-1-2)",
+        "name": "Torre Movilnet (OLT-2)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Torre Movilnet (OLT-1-2)",
+        "type": "FTTH",
+        "name": "Torre Movilnet (OLT-2)",
+        "mbps": 0
+      }
+    ]
+  },
+  {
+    "deviceId": "FTTH-TCY-01",
+    "data": [
+      {
+        "timestamp": "2024-09-30T12:00:00Z",
+        "group": "Tocuyito (OLT-1)",
+        "name": "Tocuyito (OLT-1)",
+        "mbps": 0
+      },
+      {
+        "timestamp": "2024-09-30T13:00:00Z",
+        "group": "Tocuyito (OLT-1)",
+        "type": "FTTH",
+        "name": "Tocuyito (OLT-1)",
+        "mbps": 0
+      }
+    ]
+  }
+]

@@ -1,0 +1,658 @@
+{
+    "Prov-Fibex": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.100010",
+        "ip": "10.0.0.15",
+        "name": "Fibex (40 Gbps)",
+        "type": "Proveedores",
+        "group": "Fibex (40 Gbps)",
+        "key": "Prov-Fibex"
+    },
+    "Prov-Globenet": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.6.10009",
+        "ip": "10.0.0.15",
+        "name": "Cogent (50 Gbps)",
+        "type": "Proveedores",
+        "group": "Cogent (50 Gbps)",
+        "key": "Prov-Globenet"
+    },
+    "TD-Fibex-Val": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.6.10050",
+        "ip": "10.0.0.1",
+        "name": "Fibex-Valencia (50 Gbps)",
+        "type": "Transportes",
+        "group": "Fibex-Valencia (50 Gbps)",
+        "key": "TD-Fibex-Val"
+    },
+    "TD-Fibex-Maracay": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.6.5005",
+        "ip": "10.0.0.5",
+        "name": "Fibex-Caribe (4 Gbps)",
+        "type": "Transportes",
+        "group": "Fibex-Caribe (4 Gbps)",
+        "key": "TD-Fibex-Maracay"
+    },
+    "TD-Fibex-PC-IL": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.6.24",
+        "ip": "10.1.8.1",
+        "name": "Fibex-IL Pto. Cabello (6 Gbps)",
+        "type": "Transportes",
+        "group": "Fibex-Pto. Cabello (6 Gbps)",
+        "key": "TD-Fibex-PC-IL"
+    },
+    "TD-Fibex-PC-IL-BAK": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.6.25",
+        "ip": "10.1.8.1",
+        "name": "Fibex-IL Backup Pto. Cabello (6 Gbps)",
+        "type": "Transportes",
+        "group": "Fibex-Pto. Cabello (6 Gbps)",
+        "key": "TD-Fibex-PC-IL-BAK"
+    },
+    "TD-Fibex-PC-TE": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.6.10021",
+        "ip": "10.0.0.25",
+        "name": "Fibex-TE Pto. Cabello (6 Gbps)",
+        "type": "Transportes",
+        "group": "Fibex-Pto. Cabello (6 Gbps)",
+        "key": "TD-Fibex-PC-TE"
+    },
+    "TD-NetUno-Val": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.6.10051",
+        "ip": "10.0.0.1",
+        "name": "Dayco - NetUno (18 Gbps)",
+        "type": "Transportes",
+        "group": "Dayco - NetUno (18 Gbps)",
+        "key": "TD-NetUno-Val"
+    },
+    "TD-NetUno-Mcy": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.6.5006",
+        "ip": "10.0.0.5",
+        "name": "Caribe - NetUno (8 Gbps)",
+        "type": "Transportes",
+        "group": "Caribe - NetUno (8 Gbps)",
+        "key": "TD-NetUno-Mcy"
+    },
+    "TD-Digitel-PC-TE": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.6.5014",
+        "ip": "10.0.0.25",
+        "name": "Pto. Cabello - Digitel (4 Gbps)",
+        "type": "Transportes",
+        "group": "Pto. Cabello - Digitel (4 Gbps)",
+        "key": "TD-Digitel-PC-TE"
+    },
+    "TD-Digitel-CEC": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.6.5011",
+        "ip": "10.0.0.5",
+        "name": "Caribe - Digitel (1 Gbps)",
+        "type": "Transportes",
+        "group": "Caribe - Digitel (1 Gbps)",
+        "key": "TD-Digitel-CEC"
+    },
+    "TD-Digitel-Val": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.6.5004",
+        "ip": "10.0.0.15",
+        "name": "Valencia - Digitel (1 Gbps)",
+        "type": "Transportes",
+        "group": "Valencia - Digitel (1 Gbps)",
+        "key": "TD-Digitel-Val"
+    },
+    "TD-Dayco-GUA": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.100100",
+        "ip": "10.0.0.1",
+        "name": "Guacara - Netcom Plus ( 20 Gbps)",
+        "type": "Transportes",
+        "group": "Guacara - Netcom Plus ( 20 Gbps)",
+        "key": "TD-Dayco-GUA"
+    },
+    "TD-Dayco-MRD": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.5023",
+        "ip": "10.0.0.1",
+        "name": "Mirador - Netcom Plus (10 Gbps)",
+        "type": "Transportes",
+        "group": "Mirador - Netcom Plus (10 Gbps)",
+        "key": "TD-Dayco-MRD"
+    },
+    "BNG-01": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.200010",
+        "ip": "10.0.0.1",
+        "name": "BNG 1",
+        "type": "BNG",
+        "group": "BNG 1",
+        "key": "BNG-01"
+    },
+    "BNG-02": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.200020",
+        "ip": "10.0.0.1",
+        "name": "BNG 2",
+        "type": "BNG",
+        "group": "BNG 2",
+        "key": "BNG-02"
+    },
+    "FTTH-LP-01": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.49",
+        "ip": "10.10.48.2",
+        "name": "Los Parques - NETCOM (OLT ZTE CARD 1-3)",
+        "type": "FTTH",
+        "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3)",
+        "key": "FTTH-LP-01"
+    },
+    "FTTH-LP-06": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.19",
+        "ip": "10.10.48.2",
+        "name": "Los Parques - NETCOM (OLT-6)",
+        "type": "FTTH",
+        "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3)",
+        "key": "FTTH-LP-06"
+    },
+    "FTTH-LP-07": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.18",
+        "ip": "10.10.48.2",
+        "name": "Los Parques - NETCOM (OLT-7)",
+        "type": "FTTH",
+        "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3)",
+        "key": "FTTH-LP-07"
+    },
+    "FTTH-LP-08": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.17",
+        "ip": "10.10.48.2",
+        "name": "Los Parques - NETCOM (OLT-8)",
+        "type": "FTTH",
+        "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3)",
+        "key": "FTTH-LP-08"
+    },
+    "FTTH-LP-13": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.12",
+        "ip": "10.10.48.2",
+        "name": "Los Parques - NETCOM (OLT-13)",
+        "type": "FTTH",
+        "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3)",
+        "key": "FTTH-LP-13"
+    },
+    "FTTH-LP-04": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.21",
+        "ip": "10.10.48.2",
+        "name": "Los Parques - INYC (OLT-4)",
+        "type": "FTTH",
+        "group": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 13)",
+        "key": "FTTH-LP-04"
+    },
+    "FTTH-LP-09": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.16",
+        "ip": "10.10.48.2",
+        "name": "Los Parques - INYC (OLT-9)",
+        "type": "FTTH",
+        "group": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 13)",
+        "key": "FTTH-LP-09"
+    },
+    "FTTH-LP-10": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.15",
+        "ip": "10.10.48.2",
+        "name": "Los Parques - INYC (OLT-10)",
+        "type": "FTTH",
+        "group": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 13)",
+        "key": "FTTH-LP-10"
+    },
+    "FTTH-LP-11": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.14",
+        "ip": "10.10.48.2",
+        "name": "Los Parques - INYC (OLT-11)",
+        "type": "FTTH",
+        "group": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 13)",
+        "key": "FTTH-LP-11"
+    },
+    "FTTH-LP-12": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.13",
+        "ip": "10.10.48.2",
+        "name": "Los Parques - INYC (OLT-12)",
+        "type": "FTTH",
+        "group": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 13)",
+        "key": "FTTH-LP-12"
+    },
+    "FTTH-PLI-01": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.9",
+        "ip": "10.1.0.7",
+        "name": "Paseo - Parque Valencia (OLT 1)",
+        "type": "FTTH",
+        "group": "Paseo - Parque Valencia (OLT 1)",
+        "key": "FTTH-PLI-01"
+    },
+    "FTTH-PLI-02": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.10",
+        "ip": "10.1.0.7",
+        "name": "Paseo - Isabelica, La Quizanda (OLT 2)",
+        "type": "FTTH",
+        "group": "Paseo - Isabelica, La Quizanda (OLT 2)",
+        "key": "FTTH-PLI-02"
+    },
+    "FTTH-PLI-03": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.11",
+        "ip": "10.1.0.7",
+        "name": "Paseo - Guajiros, Santa Rosa (OLT 3)",
+        "type": "FTTH",
+        "group": "Paseo - Guajiros, Santa Rosa (OLT 3)",
+        "key": "FTTH-PLI-03"
+    },
+    "FTTH-SLA-01": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.4",
+        "ip": "10.1.50.7",
+        "name": "Shangri LA (OLT-1)",
+        "type": "FTTH",
+        "group": "Shangri LA(OLT-1-2-3)",
+        "key": "FTTH-SLA-01"
+    },
+    "FTTH-SLA-02": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.5",
+        "ip": "10.1.50.7",
+        "name": "Shangri LA (OLT-2)",
+        "type": "FTTH",
+        "group": "Shangri LA(OLT-1-2-3)",
+        "key": "FTTH-SLA-02"
+    },
+    "FTTH-SLA-03": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.6",
+        "ip": "10.1.50.7",
+        "name": "Shangri LA (OLT-3)",
+        "type": "FTTH",
+        "group": "Shangri LA(OLT-1-2-3)",
+        "key": "FTTH-SLA-03"
+    },
+    "FTTH-FM-01": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.10",
+        "ip": "10.1.51.2",
+        "name": "Fundacion Mendoza (OLT-1)",
+        "type": "FTTH",
+        "group": "Fundacion Mendoza (OLT-1-2-3-4)",
+        "key": "FTTH-FM-01"
+    },
+    "FTTH-FM-02": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.11",
+        "ip": "10.1.51.2",
+        "name": "Fundacion Mendoza (OLT-2)",
+        "type": "FTTH",
+        "group": "Fundacion Mendoza (OLT-1-2-3-4)",
+        "key": "FTTH-FM-02"
+    },
+    "FTTH-FM-03": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.12",
+        "ip": "10.1.51.2",
+        "name": "Fundacion Mendoza (OLT-3)",
+        "type": "FTTH",
+        "group": "Fundacion Mendoza (OLT-1-2-3-4)",
+        "key": "FTTH-FM-03"
+    },
+    "FTTH-FM-04": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.13",
+        "ip": "10.1.51.2",
+        "name": "Fundacion Mendoza (OLT-4)",
+        "type": "FTTH",
+        "group": "Fundacion Mendoza (OLT-1-2-3-4)",
+        "key": "FTTH-FM-04"
+    },
+    "FTTH-MRD-01": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.26",
+        "ip": "10.1.44.2",
+        "name": "Mirador(OLT-1)",
+        "type": "FTTH",
+        "group": "Mirador(OLT-1-2)",
+        "key": "FTTH-MRD-01"
+    },
+    "FTTH-MRD-02": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.27",
+        "ip": "10.1.44.2",
+        "name": "Mirador(OLT-2)",
+        "type": "FTTH",
+        "group": "Mirador(OLT-1-2)",
+        "key": "FTTH-MRD-02"
+    },
+    "FTTH-MGS-01": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.3 ",
+        "ip": "10.10.56.2",
+        "name": "Mango Shopping(OLT-1)",
+        "type": "FTTH",
+        "group": "Mango Shopping(OLT-1-2)",
+        "key": "FTTH-MGS-01"
+    },
+    "FTTH-MGS-02": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.4 ",
+        "ip": "10.10.56.2",
+        "name": "Mango Shopping(OLT-1)",
+        "type": "FTTH",
+        "group": "Mango Shopping(OLT-1-2)",
+        "key": "FTTH-MGS-02"
+    },
+    "FTTH-GUA-01": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.1",
+        "ip": "10.10.44.2",
+        "name": "Guacara (OLT-1)",
+        "type": "FTTH",
+        "group": "Guacara (OLT-1-2-3-4-5)",
+        "key": "FTTH-GUA-01"
+    },
+    "FTTH-GUA-02": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.2",
+        "ip": "10.10.44.2",
+        "name": "Guacara (OLT-2)",
+        "type": "FTTH",
+        "group": "Guacara (OLT-1-2-3-4-5)",
+        "key": "FTTH-GUA-02"
+    },
+    "FTTH-GUA-03": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.3",
+        "ip": "10.10.44.2",
+        "name": "Guacara (OLT-3)",
+        "type": "FTTH",
+        "group": "Guacara (OLT-1-2-3-4-5)",
+        "key": "FTTH-GUA-03"
+    },
+    "FTTH-GUA-04": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.4",
+        "ip": "10.10.44.2",
+        "name": "Guacara (OLT-4)",
+        "type": "FTTH",
+        "group": "Guacara (OLT-1-2-3-4-5)",
+        "key": "FTTH-GUA-04"
+    },
+    "FTTH-GUA-05": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.10",
+        "ip": "10.10.44.2",
+        "name": "Guacara (OLT-5)",
+        "type": "FTTH",
+        "group": "Guacara (OLT-1-2-3-4-5)",
+        "key": "FTTH-GUA-05"
+    },
+    "FTTH-GUA-06": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.12",
+        "ip": "10.10.44.2",
+        "name": "Guacara (OLT-6)",
+        "type": "FTTH",
+        "group": "Guacara (OLT-1-2-3-4-5)",
+        "key": "FTTH-GUA-06"
+    },
+    "FTTH-GYS-01": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.3",
+        "ip": "10.0.0.12",
+        "name": "Los Guayos (OLT-1)",
+        "type": "FTTH",
+        "group": "Los Guayos (OLT-1-2)",
+        "key": "FTTH-GYS-01"
+    },
+    "FTTH-GYS-02": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.4",
+        "ip": "10.0.0.12",
+        "name": "Los Guayos (OLT-2)",
+        "type": "FTTH",
+        "group": "Los Guayos (OLT-1-2)",
+        "key": "FTTH-GYS-02"
+    },
+    "FTTH-GYS-03": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.5",
+        "ip": "10.0.0.12",
+        "name": "Paraparal (OLT-3)",
+        "type": "FTTH",
+        "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
+        "key": "FTTH-GYS-03"
+    },
+    "FTTH-GYS-04": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.6",
+        "ip": "10.0.0.12",
+        "name": "Paraparal (OLT-4)",
+        "type": "FTTH",
+        "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
+        "key": "FTTH-GYS-04"
+    },
+    "FTTH-GYS-05": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.7",
+        "ip": "10.0.0.12",
+        "name": "Paraparal (OLT-5)",
+        "type": "FTTH",
+        "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
+        "key": "FTTH-GYS-05"
+    },
+    "FTTH-GYS-06": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.8",
+        "ip": "10.0.0.12",
+        "name": "Paraparal (OLT-6)",
+        "type": "FTTH",
+        "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
+        "key": "FTTH-GYS-06"
+    },
+    "FTTH-GYS-07": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.9",
+        "ip": "10.0.0.12",
+        "name": "Paraparal (OLT-7)",
+        "type": "FTTH",
+        "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
+        "key": "FTTH-GYS-07"
+    },
+    "FTTH-GYS-08": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.10",
+        "ip": "10.0.0.12",
+        "name": "Paraparal (OLT-8)",
+        "type": "FTTH",
+        "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
+        "key": "FTTH-GYS-08"
+    },
+    "FTTH-GYS-09": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.11",
+        "ip": "10.0.0.12",
+        "name": "Paraparal (OLT-9)",
+        "type": "FTTH",
+        "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
+        "key": "FTTH-GYS-09"
+    },
+    "FTTH-IL-01": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.13",
+        "ip": "10.1.8.1",
+        "name": "Isla Larga",
+        "type": "FTTH",
+        "group": "Isla Larga",
+        "key": "FTTH-IL-01"
+    },
+    "FTTH-TE-01": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.7",
+        "ip": "10.1.96.7",
+        "name": "Torre Ejecutiva (OLT-1)",
+        "type": "FTTH",
+        "group": "Torre Ejecutiva (OLT-1-2-3-4)",
+        "key": "FTTH-TE-01"
+    },
+    "FTTH-TE-02": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.8",
+        "ip": "10.1.96.7",
+        "name": "Torre Ejecutiva (OLT-2)",
+        "type": "FTTH",
+        "group": "Torre Ejecutiva (OLT-1-2-3-4)",
+        "key": "FTTH-TE-02"
+    },
+    "FTTH-TE-03": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.9",
+        "ip": "10.1.96.7",
+        "name": "Torre Ejecutiva (OLT-3)",
+        "type": "FTTH",
+        "group": "Torre Ejecutiva (OLT-1-2-3-4)",
+        "key": "FTTH-TE-03"
+    },
+    "FTTH-TE-04": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.12",
+        "ip": "10.1.96.7",
+        "name": "Torre Ejecutiva (OLT-4)",
+        "type": "FTTH",
+        "group": "Torre Ejecutiva (OLT-1-2-3-4)",
+        "key": "FTTH-TE-04"
+    },
+    "FTTH-LSP-01": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.2",
+        "ip": "10.1.108.2",
+        "name": "La Sorpresa(OLT-1)",
+        "type": "FTTH",
+        "group": "La Sorpresa(OLT-1-2-3)",
+        "key": "FTTH-LSP-01"
+    },
+    "FTTH-LSP-02": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.3",
+        "ip": "10.1.108.2",
+        "name": "La Sorpresa(OLT-2)",
+        "type": "FTTH",
+        "group": "La Sorpresa(OLT-1-2-3)",
+        "key": "FTTH-LSP-02"
+    },
+    "FTTH-LSP-03": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.5",
+        "ip": "10.1.108.2",
+        "name": "La Sorpresa(OLT-3)",
+        "type": "FTTH",
+        "group": "La Sorpresa(OLT-1-2-3)",
+        "key": "FTTH-LSP-03"
+    },
+    "FTTH-CEC-01": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.10",
+        "ip": "10.1.20.2",
+        "name": "Caribe (OLT-1)",
+        "type": "FTTH",
+        "group": "Caribe (OLT-1-2-3-4-6)",
+        "key": "FTTH-CEC-01"
+    },
+    "FTTH-CEC-02": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.11",
+        "ip": "10.1.20.2",
+        "name": "Caribe (OLT-2)",
+        "type": "FTTH",
+        "group": "Caribe (OLT-1-2-3-4-6)",
+        "key": "FTTH-CEC-02"
+    },
+    "FTTH-CEC-03": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.12",
+        "ip": "10.1.20.2",
+        "name": "Caribe (OLT-3)",
+        "type": "FTTH",
+        "group": "Caribe (OLT-1-2-3-4-6)",
+        "key": "FTTH-CEC-03"
+    },
+    "FTTH-CEC-04": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.16",
+        "ip": "10.1.20.2",
+        "name": "Caribe (OLT-4)",
+        "type": "FTTH",
+        "group": "Caribe (OLT-1-2-3-4-6)",
+        "key": "FTTH-CEC-04"
+    },
+    "FTTH-CEC-06": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.15",
+        "ip": "10.1.20.2",
+        "name": "Caribe (OLT-6)",
+        "type": "FTTH",
+        "group": "Caribe (OLT-1-2-3-4-6)",
+        "key": "FTTH-CEC-06"
+    },
+    "FTTH-CEC-05": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.14",
+        "ip": "10.1.20.2",
+        "name": "La Morita(OLT-5)",
+        "type": "FTTH",
+        "group": "La Morita(OLT-5)",
+        "key": "FTTH-CEC-05"
+    },
+    "FTTH-CGA-01": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.3",
+        "ip": "10.0.2.10",
+        "name": "Cagua (OLT-1)",
+        "type": "FTTH",
+        "group": "Cagua(OLT-1-2-3-4-5)",
+        "key": "FTTH-CGA-01"
+    },
+    "FTTH-CGA-02": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.4",
+        "ip": "10.0.2.10",
+        "name": "Cagua (OLT-2)",
+        "type": "FTTH",
+        "group": "Cagua(OLT-1-2-3-4-5)",
+        "key": "FTTH-CGA-02"
+    },
+    "FTTH-CGA-03": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.5",
+        "ip": "10.0.2.10",
+        "name": "Cagua (OLT-3)",
+        "type": "FTTH",
+        "group": "Cagua(OLT-1-2-3-4-5)",
+        "key": "FTTH-CGA-03"
+    },
+    "FTTH-CGA-04": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.6",
+        "ip": "10.0.2.10",
+        "name": "Cagua (OLT-4)",
+        "type": "FTTH",
+        "group": "Cagua(OLT-1-2-3-4-5)",
+        "key": "FTTH-CGA-04"
+    },
+    "FTTH-CGA-05": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.7",
+        "ip": "10.0.2.10",
+        "name": "Cagua (OLT-5)",
+        "type": "FTTH",
+        "group": "Cagua(OLT-1-2-3-4-5)",
+        "key": "FTTH-CGA-05"
+    },
+    "FTTH-CGA-06": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.8",
+        "ip": "10.0.2.10",
+        "name": "Cagua (OLT-6)",
+        "type": "FTTH",
+        "group": "Cagua(OLT-1-2-3-4-5)",
+        "key": "FTTH-CGA-06"
+    },
+    "FTTH-CGA-07": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.9",
+        "ip": "10.0.2.10",
+        "name": "Cagua (OLT-7)",
+        "type": "FTTH",
+        "group": "Cagua(OLT-1-2-3-4-5)",
+        "key": "FTTH-CGA-07"
+    },
+    "FTTH-SJQ-01": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.2",
+        "ip": "10.10.59.1",
+        "name": "San Joaquín(OLT-1)",
+        "type": "FTTH",
+        "group": "San Joaquín(OLT-1-2-3)",
+        "key": "FTTH-SJQ-01"
+    },
+    "FTTH-SJQ-02": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.3",
+        "ip": "10.10.59.1",
+        "name": "San Joaquín(OLT-2)",
+        "type": "FTTH",
+        "group": "San Joaquín(OLT-1-2-3)",
+        "key": "FTTH-SJQ-02"
+    },
+    "FTTH-SJQ-03": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.4",
+        "ip": "10.10.59.1",
+        "name": "San Joaquín(OLT-3)",
+        "type": "FTTH",
+        "group": "San Joaquín(OLT-1-2-3)",
+        "key": "FTTH-SJQ-03"
+    },
+    "FTTH-TM-01": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.112",
+        "ip": "10.2.64.1",
+        "name": "Torre Movilnet (OLT-1)",
+        "type": "FTTH",
+        "group": "Torre Movilnet (OLT-1-2)",
+        "key": "FTTH-TM-01"
+    },
+    "FTTH-TM-02": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.113",
+        "ip": "10.2.64.1",
+        "name": "Torre Movilnet (OLT-2)",
+        "type": "FTTH",
+        "group": "Torre Movilnet (OLT-1-2)",
+        "key": "FTTH-TM-02"
+    },
+    "FTTH-TCY-01": {
+        "oid": ".1.3.6.1.2.1.31.1.1.1.10.3",
+        "ip": "10.10.60.1",
+        "name": "Tocuyito (OLT-1)",
+        "type": "FTTH",
+        "group": "Tocuyito (OLT-1)",
+        "key": "FTTH-TCY-01"
+    }
+}
