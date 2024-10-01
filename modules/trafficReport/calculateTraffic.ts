@@ -31,7 +31,7 @@ function openFile(): TrafficData {
 async function get(target: string, oids: string): Promise<any> {
     return new Promise((resolve, reject) => {
         let timeout = [1000];
-        let community_name = 'NETCOM';
+        let community_name = 'public';
         const session = new snmp.Session();
         session.get({ oid: oids, host: target, timeouts: timeout, community: community_name }, (error, varbinds) => {
             session.close();
