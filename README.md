@@ -7,7 +7,7 @@ For the frontend Implement React on all websites, such as the results query webs
 
 To run the server use:
 
-> npx tsx app.ts
+> npx tsx server.ts
 
 For run the react server
 
