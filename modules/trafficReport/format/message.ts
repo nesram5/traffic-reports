@@ -1,4 +1,4 @@
-import { TrafficReport } from './interfaces';
+import { TrafficReport } from '../interfaces/trafficData';
 
 export function detailed_report(detailedReport: TrafficReport, startTime: string): string {
     let banner = `\n\n\n\n------ _Reporte detallado_ -------\n`;

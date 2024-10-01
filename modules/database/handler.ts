@@ -1,8 +1,7 @@
-import { TrafficReport } from '../trafficReport/interfaces'
+import { TrafficReport } from '../trafficReport/interfaces/trafficData'
 import mongoose from 'mongoose';
 import fs from 'fs';
-import { CACHE_FILE_PATH } from '../../app';
-
+import { CACHE_FILE_PATH } from '../../server';
 
 // Function to fetch the latest data from MongoDB and write to the cache file
 const compiledTrafficDataSchema = new mongoose.Schema({
@@ -17,17 +16,18 @@ const compiledTrafficDataSchema = new mongoose.Schema({
 const CompTrafficData = mongoose.model('compiledtraffic', compiledTrafficDataSchema);
 
 
-const trafficDataSchema = new mongoose.Schema({
+const looseTrafficDataSchema = new mongoose.Schema({
     deviceId: { type: String, required: true }, 
     data: [
         {
-            timestamp: { type: Date, required: true }, 
-            group: { type: String, required: true },    
+            timestamp: { type: Date, required: true },
+            group: { type: String, required: true }, 
+            name: { type: String, required: true },    
             mbps: { type: Number, required: true }      
         }
     ]
 });
-const TrafficDataSchema = mongoose.model('trafficreports', trafficDataSchema);
+const LooseTrafficDataSchema = mongoose.model('trafficreports', looseTrafficDataSchema);
 
 
 export async function fetchTrafficDataFromDatabase () {
@@ -40,20 +40,9 @@ export async function fetchTrafficDataFromDatabase () {
     }
 }
 
-export async function serveDB(): Promise< string | {}> {
-    
-    try {
-      const trafficData: {} = await CompTrafficData.find().sort({ 'data.timestamp': 1 });
-      return trafficData      
-    } catch (error: any) {
-        let err: string = (error).toString();
-        return (err)
-    }
-};
-
 export async function connectDB() {
     try {
-        await mongoose.connect('mongodb://localhost:27017/trafficMetrics');
+        await mongoose.connect(process.env.MONGO_DB);
         console.log('Conexión exitosa a la base de datos');
     } catch (err) {
         console.error('Error conectando a la base de datos:', err);
@@ -61,10 +50,10 @@ export async function connectDB() {
     }
 }
 
-async function addTrafficData(deviceId: string, newTrafficRecord: {}) {
+async function pushLooseTrafficData(deviceId: string, newTrafficRecord: {}) {
     try {
         
-        const result = await TrafficDataSchema.findOneAndUpdate(
+        const result = await LooseTrafficDataSchema.findOneAndUpdate(
             { deviceId: deviceId }, 
             {
                 $push: { 
@@ -77,7 +66,7 @@ async function addTrafficData(deviceId: string, newTrafficRecord: {}) {
         console.error('Error adding data:', error);
     }
 }
-async function addCompTrafficData(newTrafficRecord: {}) {
+async function pushCompiledReport(newTrafficRecord: {}) {
     try {
         
         const result = await CompTrafficData.findOneAndUpdate(
@@ -94,7 +83,7 @@ async function addCompTrafficData(newTrafficRecord: {}) {
     }
 }
 
-async function processTrafficData(category: object, date: Date) {
+async function submitLooseTrafficData(category: object, date: Date) {
     for (const [group, device] of Object.entries(category)) {
         let mbpsChecked = device.mbps;
         if (typeof device.mbps == 'string') mbpsChecked = 0;
@@ -103,21 +92,23 @@ async function processTrafficData(category: object, date: Date) {
             group: device.group,
             mbps: mbpsChecked
         };
-        await addTrafficData(device.id, dataToInsert);
+        await pushLooseTrafficData(device.id, dataToInsert);
     }
 }
-export  async function submitToDB(detailedReport: TrafficReport, compiledTrafficReport: string) {
+export  async function submitToDB(detailedReport: TrafficReport, simpleResult: string, detailedResult: string) {
     
     const date = new Date();
 
-    await processTrafficData(detailedReport.Proveedores, date);
-    await processTrafficData(detailedReport.Transportes, date);
-    await processTrafficData(detailedReport.BNG, date);
-    await processTrafficData(detailedReport.FTTH, date);
-    //Compiled report submit to DB
+    await submitLooseTrafficData(detailedReport.Proveedores, date);
+    await submitLooseTrafficData(detailedReport.Transportes, date);
+    await submitLooseTrafficData(detailedReport.BNG, date);
+    await submitLooseTrafficData(detailedReport.FTTH, date);
+    
     const dataToInsert = {
         timestamp: date, 
-        compiledReport: compiledTrafficReport
+        simpleReport: simpleResult,
+        detaildReport: detailedResult
+
     }
-    await addCompTrafficData(dataToInsert);  
+    await pushCompiledReport(dataToInsert);  
 }

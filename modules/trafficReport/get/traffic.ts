@@ -1,37 +1,35 @@
 import fs from 'fs';
 import path from 'path';
 import snmp from 'snmp-native';
-import { detailed_report, simplified_report } from './reportFormat';
-import { TrafficData, TrafficReport } from './interfaces';
-import { submitToDB } from '../database/handler';
+import { TrafficData, TrafficReport } from '../interfaces/trafficData';
 
-export async function startScan(): Promise<string> {
-    const startTime = new Date().toLocaleTimeString();
-    console.log(`Process started at: ${startTime}`);
 
-    const data = openFile();
-    const detailedReport: TrafficReport = { Proveedores: [], Transportes: [], BNG: [], FTTH: [] };
-    const trafficReport: TrafficReport = initializeTrafficReport(data);
+export function readDeviceList(): TrafficData | string {
+    const filePath = path.join(__dirname, '../data/list_devices.json');
 
-    const sampleData: Array<Record<string, any>> = [[], [], [], []];
-    await getAll(data, sampleData);
-    calculateTraffic(data, sampleData, detailedReport, trafficReport);
-    const simpleReport = simplified_report(trafficReport, startTime);
-    const resultMessage = simpleReport + detailed_report(detailedReport, startTime);
-    submitToDB(detailedReport, simpleReport);
-    return resultMessage;
+    try {
+        const data = fs.readFileSync(filePath, 'utf8');
+        
+        try {
+            return JSON.parse(data) as TrafficData;
+        } catch (jsonError) {
+            console.error('Error parsing JSON:', jsonError);
+            let err = "Can't access to the traffic_data file"
+            return err; 
+        }
+
+    } catch (fileError) {
+        console.error('Error reading file:', fileError);
+        let err = "Can't access to the traffic_data file"
+        return err; 
+    }
 }
 
-function openFile(): TrafficData {
-    const filePath = path.join(__dirname, '/data/traffic_data.json');
-    const data = fs.readFileSync(filePath, 'utf8');
-    return JSON.parse(data);
-}
 
 async function get(target: string, oids: string): Promise<any> {
     return new Promise((resolve, reject) => {
         let timeout = [1000];
-        let community_name = 'public';
+        let community_name = process.env.COMUNNITY;
         const session = new snmp.Session();
         session.get({ oid: oids, host: target, timeouts: timeout, community: community_name }, (error, varbinds) => {
             session.close();
@@ -44,7 +42,7 @@ async function get(target: string, oids: string): Promise<any> {
     });
 }
 
-async function getAll(data: TrafficData, sampleData: Array<Record<string, any>>) {
+export async function getAll(data: TrafficData, sampleData: Array<Record<string, any>>) {
     for (let i = 0; i < 4; i++) {
         for (const device of Object.values(data)) {
             try {
@@ -61,7 +59,7 @@ async function getAll(data: TrafficData, sampleData: Array<Record<string, any>>)
     }
 }
 
-function calculateResult(firstPass: string, secondPass: string): number | string {
+function convertToMbps(firstPass: string, secondPass: string): number | string {
     try {
         const counter1 = BigInt(firstPass);
         const counter2 = BigInt(secondPass);
@@ -74,7 +72,7 @@ function calculateResult(firstPass: string, secondPass: string): number | string
     }
 }
 
-function calculateTraffic(data: TrafficData, sampleData: Array<Record<string, any>>, detailedReport: TrafficReport, trafficReport: TrafficReport) {
+export function calculateTraffic(data: TrafficData, sampleData: Array<Record<string, any>>, detailedReport: TrafficReport, trafficReport: TrafficReport) {
     for (const device of Object.values(data)) {
         const name: string = device.name;
         const group: string = device.group;
@@ -82,8 +80,8 @@ function calculateTraffic(data: TrafficData, sampleData: Array<Record<string, an
         let avgResult: number | string;
 
         if (sampleData[0][name] && sampleData[1][name] && sampleData[2][name] && sampleData[3][name]) {
-            let result1: number | string = calculateResult(sampleData[0][name], sampleData[1][name]);
-            let result2: number | string = calculateResult(sampleData[2][name], sampleData[3][name]);
+            let result1: number | string = convertToMbps(sampleData[0][name], sampleData[1][name]);
+            let result2: number | string = convertToMbps(sampleData[2][name], sampleData[3][name]);
             if (!result1 || !result2 || typeof result1 === 'string' || typeof result2 === 'string') {
                 avgResult = 0;
             } else {
@@ -106,7 +104,7 @@ function calculateTraffic(data: TrafficData, sampleData: Array<Record<string, an
     }
 }
 
-function initializeTrafficReport(data: TrafficData): TrafficReport {
+export function initializeTrafficReport(data: TrafficData): TrafficReport {
     const simplified: TrafficReport = { Proveedores: [], Transportes: [], BNG: [], FTTH: [] };
     for (const device of Object.values(data)) {
         const property: string = device.type;

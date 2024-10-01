@@ -2,13 +2,14 @@ import express from 'express';
 import fs from 'fs';
 import path from 'path';
 import { exec } from "child_process";
-import { startScan } from './modules/trafficReport/calculateTraffic';  
+import { getReport, autoGetReport } from './modules/trafficReport/main';  
 import mongoose from 'mongoose';
 import cors from 'cors';
 import { fetchTrafficDataFromDatabase }  from './modules/database/handler';
+import 'dotenv/config'
 
 const app = express();
-const port = 3001;
+const port = process.env.PORT;
 app.use(cors());
 app.use(express.json());
 // Path to cache file
@@ -33,23 +34,15 @@ app.use(express.static(path.resolve(__dirname, './client/build')));
 app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, './client/build','index.html'));
   });
-/*app.use(express.static('public'));
-// Servir archivos estáticos desde la carpeta "public"
-app.use(express.static(path.join(__dirname, '/public')));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/index.html'));
-});
-*/
 app.get('/history', (req, res) => {
   res.sendFile(path.join(__dirname, './client/build', 'history.html'));
 });
 
-// Configuración de conexión a MongoDB
 
-app.get('/start-scan', async (req, res) => {
+app.get('/get-report', async (req, res) => {
     try {
-        const resultMessage = await startScan();
+        const resultMessage = await getReport();
         res.json({ message: resultMessage });
     } catch (error) {
         console.error('Error during SNMP scan:', error);
@@ -57,10 +50,9 @@ app.get('/start-scan', async (req, res) => {
     }
 });
 
-
-
+//Automatic execute functions
 async function executeEvery30Min() {
-    const resultMessage = await startScan();
+    await autoGetReport();
     fetchTrafficDataFromDatabase();
     console.log("Function executed at:", new Date());
 }
@@ -69,8 +61,7 @@ function getTimeUntilNextExecution() {
     const now = new Date();
     const minutes = now.getMinutes();
     const seconds = now.getSeconds();
-    const milliseconds = now.getMilliseconds();
-    
+    const milliseconds = now.getMilliseconds();    
     const minutesRemaining = 30 - (minutes % 30);
     
     // Calculate the time in milliseconds until the next execution
@@ -91,11 +82,16 @@ app.get("/api", (req, res) => {
   });
 // Start the server
 
-mongoose.connect('mongodb://localhost:27017/trafficMetrics')
+mongoose.connect(process.env.MONGO_DB)
     .then(() => {
         app.listen(port, () => {
+            const filePath = path.join(__dirname, './modules/trafficReport/data/list_devices.json');
+            if (!fs.existsSync(filePath)) {
+                console.error('File does not exist:', filePath);
+                return null; 
+            }
             console.log(`Server is running on http://localhost:${port}`);
-            exec('explorer "http://localhost:3001"', (error, stdout, stderr) => {
+            exec(`explorer "http://localhost:${port}`, (error, stdout, stderr) => {
                 if (error) {
                     console.error(`error: ${error.message}`);
                     return;
@@ -104,7 +100,6 @@ mongoose.connect('mongodb://localhost:27017/trafficMetrics')
                     console.error(`stderr: ${stderr}`);
                     return;
                 }
-                console.log(`stdout: ${stdout}`);
             });
             fetchTrafficDataFromDatabase();
             scheduleExecution();
