@@ -12,7 +12,7 @@ const port = 3001;
 app.use(cors());
 app.use(express.json());
 // Path to cache file
-export const CACHE_FILE_PATH = path.join(__dirname, '/cache/trafficDataCache.json');
+export const CACHE_FILE_PATH = path.join(__dirname, './cache/trafficDataCache.json');
 
 app.get('/api/traffic', async (req, res) => {    
     fs.readFile(CACHE_FILE_PATH, 'utf8', (err, data) => {
@@ -29,9 +29,9 @@ app.get('/api/traffic', async (req, res) => {
   });
 
 // Serve static files (like HTML, CSS, JS)
-app.use(express.static(path.resolve(__dirname, '/traffic-monitor/client/build')));
+app.use(express.static(path.resolve(__dirname, './client/build')));
 app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '/traffic-monitor/client/build','index.html'));
+    res.sendFile(path.resolve(__dirname, './client/build','index.html'));
   });
 /*app.use(express.static('public'));
 // Servir archivos estáticos desde la carpeta "public"
@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
 });
 */
 app.get('/history', (req, res) => {
-  res.sendFile(path.join(__dirname, '/client/build', 'history.html'));
+  res.sendFile(path.join(__dirname, './client/build', 'history.html'));
 });
 
 // Configuración de conexión a MongoDB
