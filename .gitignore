@@ -2,5 +2,5 @@
 .env
 node_modules
 client\node_modules
-modules\trafficReport\data\list_devices.json
+modules/trafficReport/data/list_devices.json
 cache\trafficDataCache.json
