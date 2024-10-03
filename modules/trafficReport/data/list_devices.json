@@ -5,7 +5,7 @@
         "name": "Fibex (40 Gbps)",
         "type": "Proveedores",
         "group": "Fibex (40 Gbps)",
-        "key": "Prov-Fibex"
+        "substract": false  
     },
     "Prov-Globenet": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.6.10009",
@@ -13,7 +13,7 @@
         "name": "Cogent (50 Gbps)",
         "type": "Proveedores",
         "group": "Cogent (50 Gbps)",
-        "key": "Prov-Globenet"
+        "substract": false
     },
     "TD-Fibex-Val": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.6.10050",
@@ -21,7 +21,7 @@
         "name": "Fibex-Valencia (50 Gbps)",
         "type": "Transportes",
         "group": "Fibex-Valencia (50 Gbps)",
-        "key": "TD-Fibex-Val"
+        "substract": false    
     },
     "TD-Fibex-Maracay": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.6.5005",
@@ -29,7 +29,7 @@
         "name": "Fibex-Caribe (4 Gbps)",
         "type": "Transportes",
         "group": "Fibex-Caribe (4 Gbps)",
-        "key": "TD-Fibex-Maracay"
+        "substract": false
     },
     "TD-Fibex-PC-IL": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.6.24",
@@ -37,7 +37,7 @@
         "name": "Fibex-IL Pto. Cabello (6 Gbps)",
         "type": "Transportes",
         "group": "Fibex-Pto. Cabello (6 Gbps)",
-        "key": "TD-Fibex-PC-IL"
+        "substract": false
     },
     "TD-Fibex-PC-IL-BAK": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.6.25",
@@ -45,7 +45,7 @@
         "name": "Fibex-IL Backup Pto. Cabello (6 Gbps)",
         "type": "Transportes",
         "group": "Fibex-Pto. Cabello (6 Gbps)",
-        "key": "TD-Fibex-PC-IL-BAK"
+        "substract": false
     },
     "TD-Fibex-PC-TE": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.6.10021",
@@ -53,7 +53,7 @@
         "name": "Fibex-TE Pto. Cabello (6 Gbps)",
         "type": "Transportes",
         "group": "Fibex-Pto. Cabello (6 Gbps)",
-        "key": "TD-Fibex-PC-TE"
+        "substract": false
     },
     "TD-NetUno-Val": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.6.10051",
@@ -61,7 +61,7 @@
         "name": "Dayco - NetUno (18 Gbps)",
         "type": "Transportes",
         "group": "Dayco - NetUno (18 Gbps)",
-        "key": "TD-NetUno-Val"
+        "substract": false
     },
     "TD-NetUno-Mcy": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.6.5006",
@@ -69,7 +69,7 @@
         "name": "Caribe - NetUno (8 Gbps)",
         "type": "Transportes",
         "group": "Caribe - NetUno (8 Gbps)",
-        "key": "TD-NetUno-Mcy"
+        "substract": false
     },
     "TD-Digitel-PC-TE": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.6.5014",
@@ -77,7 +77,7 @@
         "name": "Pto. Cabello - Digitel (4 Gbps)",
         "type": "Transportes",
         "group": "Pto. Cabello - Digitel (4 Gbps)",
-        "key": "TD-Digitel-PC-TE"
+        "substract": false
     },
     "TD-Digitel-CEC": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.6.5011",
@@ -85,7 +85,7 @@
         "name": "Caribe - Digitel (1 Gbps)",
         "type": "Transportes",
         "group": "Caribe - Digitel (1 Gbps)",
-        "key": "TD-Digitel-CEC"
+        "substract": false
     },
     "TD-Digitel-Val": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.6.5004",
@@ -93,7 +93,7 @@
         "name": "Valencia - Digitel (1 Gbps)",
         "type": "Transportes",
         "group": "Valencia - Digitel (1 Gbps)",
-        "key": "TD-Digitel-Val"
+        "substract": false
     },
     "TD-Dayco-GUA": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.100100",
@@ -101,7 +101,7 @@
         "name": "Guacara - Netcom Plus ( 20 Gbps)",
         "type": "Transportes",
         "group": "Guacara - Netcom Plus ( 20 Gbps)",
-        "key": "TD-Dayco-GUA"
+        "substract": false    
     },
     "TD-Dayco-MRD": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.5023",
@@ -109,7 +109,7 @@
         "name": "Mirador - Netcom Plus (10 Gbps)",
         "type": "Transportes",
         "group": "Mirador - Netcom Plus (10 Gbps)",
-        "key": "TD-Dayco-MRD"
+        "substract": false    
     },
     "BNG-01": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.200010",
@@ -117,7 +117,7 @@
         "name": "BNG 1",
         "type": "BNG",
         "group": "BNG 1",
-        "key": "BNG-01"
+        "substract": false
     },
     "BNG-02": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.200020",
@@ -125,7 +125,7 @@
         "name": "BNG 2",
         "type": "BNG",
         "group": "BNG 2",
-        "key": "BNG-02"
+        "substract": false
     },
     "FTTH-LP-01": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.49",
@@ -133,7 +133,7 @@
         "name": "Los Parques - NETCOM (OLT ZTE CARD 1-3)",
         "type": "FTTH",
         "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3)",
-        "key": "FTTH-LP-01"
+        "substract": false  
     },
     "FTTH-LP-06": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.19",
@@ -141,7 +141,7 @@
         "name": "Los Parques - NETCOM (OLT-6)",
         "type": "FTTH",
         "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3)",
-        "key": "FTTH-LP-06"
+        "substract": false  
     },
     "FTTH-LP-07": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.18",
@@ -149,7 +149,7 @@
         "name": "Los Parques - NETCOM (OLT-7)",
         "type": "FTTH",
         "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3)",
-        "key": "FTTH-LP-07"
+        "substract": false  
     },
     "FTTH-LP-08": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.17",
@@ -157,7 +157,7 @@
         "name": "Los Parques - NETCOM (OLT-8)",
         "type": "FTTH",
         "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3)",
-        "key": "FTTH-LP-08"
+        "substract": false  
     },
     "FTTH-LP-13": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.12",
@@ -165,7 +165,7 @@
         "name": "Los Parques - NETCOM (OLT-13)",
         "type": "FTTH",
         "group": "Los Parques - NETCOM (OLT-6-7-8-13 + OLT ZTE CARD 1-2-3)",
-        "key": "FTTH-LP-13"
+        "substract": false  
     },
     "FTTH-LP-04": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.21",
@@ -173,7 +173,7 @@
         "name": "Los Parques - INYC (OLT-4)",
         "type": "FTTH",
         "group": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 13)",
-        "key": "FTTH-LP-04"
+        "substract": false  
     },
     "FTTH-LP-09": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.16",
@@ -181,7 +181,7 @@
         "name": "Los Parques - INYC (OLT-9)",
         "type": "FTTH",
         "group": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 13)",
-        "key": "FTTH-LP-09"
+        "substract": false  
     },
     "FTTH-LP-10": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.15",
@@ -189,7 +189,7 @@
         "name": "Los Parques - INYC (OLT-10)",
         "type": "FTTH",
         "group": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 13)",
-        "key": "FTTH-LP-10"
+        "substract": false  
     },
     "FTTH-LP-11": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.14",
@@ -197,7 +197,7 @@
         "name": "Los Parques - INYC (OLT-11)",
         "type": "FTTH",
         "group": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 13)",
-        "key": "FTTH-LP-11"
+        "substract": false  
     },
     "FTTH-LP-12": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.13",
@@ -205,7 +205,7 @@
         "name": "Los Parques - INYC (OLT-12)",
         "type": "FTTH",
         "group": "Los Parques - INYC  (OLT 4-9-10-11-12 + OLT ZTE CARD 13)",
-        "key": "FTTH-LP-12"
+        "substract": false  
     },
     "FTTH-PLI-01": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.9",
@@ -213,7 +213,7 @@
         "name": "Paseo - Parque Valencia (OLT 1)",
         "type": "FTTH",
         "group": "Paseo - Parque Valencia (OLT 1)",
-        "key": "FTTH-PLI-01"
+        "substract": false   
     },
     "FTTH-PLI-02": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.10",
@@ -221,7 +221,7 @@
         "name": "Paseo - Isabelica, La Quizanda (OLT 2)",
         "type": "FTTH",
         "group": "Paseo - Isabelica, La Quizanda (OLT 2)",
-        "key": "FTTH-PLI-02"
+        "substract": false   
     },
     "FTTH-PLI-03": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.11",
@@ -229,7 +229,7 @@
         "name": "Paseo - Guajiros, Santa Rosa (OLT 3)",
         "type": "FTTH",
         "group": "Paseo - Guajiros, Santa Rosa (OLT 3)",
-        "key": "FTTH-PLI-03"
+        "substract": false   
     },
     "FTTH-SLA-01": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.4",
@@ -237,7 +237,7 @@
         "name": "Shangri LA (OLT-1)",
         "type": "FTTH",
         "group": "Shangri LA(OLT-1-2-3)",
-        "key": "FTTH-SLA-01"
+        "substract": false   
     },
     "FTTH-SLA-02": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.5",
@@ -245,7 +245,7 @@
         "name": "Shangri LA (OLT-2)",
         "type": "FTTH",
         "group": "Shangri LA(OLT-1-2-3)",
-        "key": "FTTH-SLA-02"
+        "substract": false   
     },
     "FTTH-SLA-03": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.6",
@@ -253,7 +253,7 @@
         "name": "Shangri LA (OLT-3)",
         "type": "FTTH",
         "group": "Shangri LA(OLT-1-2-3)",
-        "key": "FTTH-SLA-03"
+        "substract": false   
     },
     "FTTH-FM-01": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.10",
@@ -261,7 +261,7 @@
         "name": "Fundacion Mendoza (OLT-1)",
         "type": "FTTH",
         "group": "Fundacion Mendoza (OLT-1-2-3-4)",
-        "key": "FTTH-FM-01"
+        "substract": false  
     },
     "FTTH-FM-02": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.11",
@@ -269,7 +269,7 @@
         "name": "Fundacion Mendoza (OLT-2)",
         "type": "FTTH",
         "group": "Fundacion Mendoza (OLT-1-2-3-4)",
-        "key": "FTTH-FM-02"
+        "substract": false  
     },
     "FTTH-FM-03": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.12",
@@ -277,7 +277,7 @@
         "name": "Fundacion Mendoza (OLT-3)",
         "type": "FTTH",
         "group": "Fundacion Mendoza (OLT-1-2-3-4)",
-        "key": "FTTH-FM-03"
+        "substract": false  
     },
     "FTTH-FM-04": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.13",
@@ -285,7 +285,7 @@
         "name": "Fundacion Mendoza (OLT-4)",
         "type": "FTTH",
         "group": "Fundacion Mendoza (OLT-1-2-3-4)",
-        "key": "FTTH-FM-04"
+        "substract": false  
     },
     "FTTH-MRD-01": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.26",
@@ -293,7 +293,7 @@
         "name": "Mirador(OLT-1)",
         "type": "FTTH",
         "group": "Mirador(OLT-1-2)",
-        "key": "FTTH-MRD-01"
+        "substract": false   
     },
     "FTTH-MRD-02": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.27",
@@ -301,7 +301,7 @@
         "name": "Mirador(OLT-2)",
         "type": "FTTH",
         "group": "Mirador(OLT-1-2)",
-        "key": "FTTH-MRD-02"
+        "substract": false   
     },
     "FTTH-MGS-01": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.3 ",
@@ -309,7 +309,7 @@
         "name": "Mango Shopping(OLT-1)",
         "type": "FTTH",
         "group": "Mango Shopping(OLT-1-2)",
-        "key": "FTTH-MGS-01"
+        "substract": false   
     },
     "FTTH-MGS-02": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.4 ",
@@ -317,7 +317,7 @@
         "name": "Mango Shopping(OLT-1)",
         "type": "FTTH",
         "group": "Mango Shopping(OLT-1-2)",
-        "key": "FTTH-MGS-02"
+        "substract": false   
     },
     "FTTH-GUA-01": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.1",
@@ -325,7 +325,7 @@
         "name": "Guacara (OLT-1)",
         "type": "FTTH",
         "group": "Guacara (OLT-1-2-3-4-5)",
-        "key": "FTTH-GUA-01"
+        "substract": false   
     },
     "FTTH-GUA-02": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.2",
@@ -333,7 +333,7 @@
         "name": "Guacara (OLT-2)",
         "type": "FTTH",
         "group": "Guacara (OLT-1-2-3-4-5)",
-        "key": "FTTH-GUA-02"
+        "substract": false   
     },
     "FTTH-GUA-03": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.3",
@@ -341,7 +341,7 @@
         "name": "Guacara (OLT-3)",
         "type": "FTTH",
         "group": "Guacara (OLT-1-2-3-4-5)",
-        "key": "FTTH-GUA-03"
+        "substract": false   
     },
     "FTTH-GUA-04": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.4",
@@ -349,7 +349,7 @@
         "name": "Guacara (OLT-4)",
         "type": "FTTH",
         "group": "Guacara (OLT-1-2-3-4-5)",
-        "key": "FTTH-GUA-04"
+        "substract": false   
     },
     "FTTH-GUA-05": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.10",
@@ -357,7 +357,7 @@
         "name": "Guacara (OLT-5)",
         "type": "FTTH",
         "group": "Guacara (OLT-1-2-3-4-5)",
-        "key": "FTTH-GUA-05"
+        "substract": false   
     },
     "FTTH-GUA-06": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.12",
@@ -365,7 +365,7 @@
         "name": "Guacara (OLT-6)",
         "type": "FTTH",
         "group": "Guacara (OLT-1-2-3-4-5)",
-        "key": "FTTH-GUA-06"
+        "substract": false   
     },
     "FTTH-GYS-01": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.3",
@@ -373,7 +373,7 @@
         "name": "Los Guayos (OLT-1)",
         "type": "FTTH",
         "group": "Los Guayos (OLT-1-2)",
-        "key": "FTTH-GYS-01"
+        "substract": false   
     },
     "FTTH-GYS-02": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.4",
@@ -381,7 +381,7 @@
         "name": "Los Guayos (OLT-2)",
         "type": "FTTH",
         "group": "Los Guayos (OLT-1-2)",
-        "key": "FTTH-GYS-02"
+        "substract": false  
     },
     "FTTH-GYS-03": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.5",
@@ -389,7 +389,7 @@
         "name": "Paraparal (OLT-3)",
         "type": "FTTH",
         "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
-        "key": "FTTH-GYS-03"
+        "substract": false   
     },
     "FTTH-GYS-04": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.6",
@@ -397,7 +397,7 @@
         "name": "Paraparal (OLT-4)",
         "type": "FTTH",
         "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
-        "key": "FTTH-GYS-04"
+        "substract": false   
     },
     "FTTH-GYS-05": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.7",
@@ -405,7 +405,7 @@
         "name": "Paraparal (OLT-5)",
         "type": "FTTH",
         "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
-        "key": "FTTH-GYS-05"
+        "substract": false   
     },
     "FTTH-GYS-06": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.8",
@@ -413,7 +413,7 @@
         "name": "Paraparal (OLT-6)",
         "type": "FTTH",
         "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
-        "key": "FTTH-GYS-06"
+        "substract": false   
     },
     "FTTH-GYS-07": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.9",
@@ -421,7 +421,7 @@
         "name": "Paraparal (OLT-7)",
         "type": "FTTH",
         "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
-        "key": "FTTH-GYS-07"
+        "substract": false   
     },
     "FTTH-GYS-08": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.10",
@@ -429,7 +429,7 @@
         "name": "Paraparal (OLT-8)",
         "type": "FTTH",
         "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
-        "key": "FTTH-GYS-08"
+        "substract": false   
     },
     "FTTH-GYS-09": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.11",
@@ -437,7 +437,7 @@
         "name": "Paraparal (OLT-9)",
         "type": "FTTH",
         "group": "Paraparal (OLT-3-4-5-6-7-8-9)",
-        "key": "FTTH-GYS-09"
+        "substract": false   
     },
     "FTTH-IL-01": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.13",
@@ -445,7 +445,7 @@
         "name": "Isla Larga",
         "type": "FTTH",
         "group": "Isla Larga",
-        "key": "FTTH-IL-01"
+        "substract": false  
     },
     "FTTH-TE-01": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.7",
@@ -453,7 +453,7 @@
         "name": "Torre Ejecutiva (OLT-1)",
         "type": "FTTH",
         "group": "Torre Ejecutiva (OLT-1-2-3-4)",
-        "key": "FTTH-TE-01"
+        "substract": false  
     },
     "FTTH-TE-02": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.8",
@@ -461,7 +461,7 @@
         "name": "Torre Ejecutiva (OLT-2)",
         "type": "FTTH",
         "group": "Torre Ejecutiva (OLT-1-2-3-4)",
-        "key": "FTTH-TE-02"
+        "substract": false  
     },
     "FTTH-TE-03": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.9",
@@ -469,7 +469,7 @@
         "name": "Torre Ejecutiva (OLT-3)",
         "type": "FTTH",
         "group": "Torre Ejecutiva (OLT-1-2-3-4)",
-        "key": "FTTH-TE-03"
+        "substract": false  
     },
     "FTTH-TE-04": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.12",
@@ -477,7 +477,7 @@
         "name": "Torre Ejecutiva (OLT-4)",
         "type": "FTTH",
         "group": "Torre Ejecutiva (OLT-1-2-3-4)",
-        "key": "FTTH-TE-04"
+        "substract": false  
     },
     "FTTH-LSP-01": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.2",
@@ -485,7 +485,7 @@
         "name": "La Sorpresa(OLT-1)",
         "type": "FTTH",
         "group": "La Sorpresa(OLT-1-2-3)",
-        "key": "FTTH-LSP-01"
+        "substract": false   
     },
     "FTTH-LSP-02": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.3",
@@ -493,7 +493,7 @@
         "name": "La Sorpresa(OLT-2)",
         "type": "FTTH",
         "group": "La Sorpresa(OLT-1-2-3)",
-        "key": "FTTH-LSP-02"
+        "substract": false   
     },
     "FTTH-LSP-03": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.5",
@@ -501,7 +501,7 @@
         "name": "La Sorpresa(OLT-3)",
         "type": "FTTH",
         "group": "La Sorpresa(OLT-1-2-3)",
-        "key": "FTTH-LSP-03"
+        "substract": false   
     },
     "FTTH-CEC-01": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.10",
@@ -509,7 +509,7 @@
         "name": "Caribe (OLT-1)",
         "type": "FTTH",
         "group": "Caribe (OLT-1-2-3-4-6)",
-        "key": "FTTH-CEC-01"
+        "substract": false   
     },
     "FTTH-CEC-02": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.11",
@@ -517,7 +517,7 @@
         "name": "Caribe (OLT-2)",
         "type": "FTTH",
         "group": "Caribe (OLT-1-2-3-4-6)",
-        "key": "FTTH-CEC-02"
+        "substract": false   
     },
     "FTTH-CEC-03": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.12",
@@ -525,7 +525,7 @@
         "name": "Caribe (OLT-3)",
         "type": "FTTH",
         "group": "Caribe (OLT-1-2-3-4-6)",
-        "key": "FTTH-CEC-03"
+        "substract": false   
     },
     "FTTH-CEC-04": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.16",
@@ -533,7 +533,7 @@
         "name": "Caribe (OLT-4)",
         "type": "FTTH",
         "group": "Caribe (OLT-1-2-3-4-6)",
-        "key": "FTTH-CEC-04"
+        "substract": false   
     },
     "FTTH-CEC-06": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.15",
@@ -541,7 +541,7 @@
         "name": "Caribe (OLT-6)",
         "type": "FTTH",
         "group": "Caribe (OLT-1-2-3-4-6)",
-        "key": "FTTH-CEC-06"
+        "substract": false   
     },
     "FTTH-CEC-05": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.14",
@@ -549,7 +549,7 @@
         "name": "La Morita(OLT-5)",
         "type": "FTTH",
         "group": "La Morita(OLT-5)",
-        "key": "FTTH-CEC-05"
+        "substract": false   
     },
     "FTTH-CGA-01": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.3",
@@ -557,7 +557,7 @@
         "name": "Cagua (OLT-1)",
         "type": "FTTH",
         "group": "Cagua(OLT-1-2-3-4-5)",
-        "key": "FTTH-CGA-01"
+        "substract": false   
     },
     "FTTH-CGA-02": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.4",
@@ -565,7 +565,7 @@
         "name": "Cagua (OLT-2)",
         "type": "FTTH",
         "group": "Cagua(OLT-1-2-3-4-5)",
-        "key": "FTTH-CGA-02"
+        "substract": false   
     },
     "FTTH-CGA-03": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.5",
@@ -573,7 +573,7 @@
         "name": "Cagua (OLT-3)",
         "type": "FTTH",
         "group": "Cagua(OLT-1-2-3-4-5)",
-        "key": "FTTH-CGA-03"
+        "substract": false   
     },
     "FTTH-CGA-04": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.6",
@@ -581,7 +581,7 @@
         "name": "Cagua (OLT-4)",
         "type": "FTTH",
         "group": "Cagua(OLT-1-2-3-4-5)",
-        "key": "FTTH-CGA-04"
+        "substract": false   
     },
     "FTTH-CGA-05": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.7",
@@ -589,7 +589,7 @@
         "name": "Cagua (OLT-5)",
         "type": "FTTH",
         "group": "Cagua(OLT-1-2-3-4-5)",
-        "key": "FTTH-CGA-05"
+        "substract": false   
     },
     "FTTH-CGA-06": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.8",
@@ -597,7 +597,7 @@
         "name": "Cagua (OLT-6)",
         "type": "FTTH",
         "group": "Cagua(OLT-1-2-3-4-5)",
-        "key": "FTTH-CGA-06"
+        "substract": false   
     },
     "FTTH-CGA-07": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.9",
@@ -605,7 +605,7 @@
         "name": "Cagua (OLT-7)",
         "type": "FTTH",
         "group": "Cagua(OLT-1-2-3-4-5)",
-        "key": "FTTH-CGA-07"
+        "substract": false   
     },
     "FTTH-SJQ-01": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.2",
@@ -613,7 +613,7 @@
         "name": "San Joaquín(OLT-1)",
         "type": "FTTH",
         "group": "San Joaquín(OLT-1-2-3)",
-        "key": "FTTH-SJQ-01"
+        "substract": false   
     },
     "FTTH-SJQ-02": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.3",
@@ -621,7 +621,7 @@
         "name": "San Joaquín(OLT-2)",
         "type": "FTTH",
         "group": "San Joaquín(OLT-1-2-3)",
-        "key": "FTTH-SJQ-02"
+        "substract": false   
     },
     "FTTH-SJQ-03": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.4",
@@ -629,7 +629,7 @@
         "name": "San Joaquín(OLT-3)",
         "type": "FTTH",
         "group": "San Joaquín(OLT-1-2-3)",
-        "key": "FTTH-SJQ-03"
+        "substract": false   
     },
     "FTTH-TM-01": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.112",
@@ -637,7 +637,7 @@
         "name": "Torre Movilnet (OLT-1)",
         "type": "FTTH",
         "group": "Torre Movilnet (OLT-1-2)",
-        "key": "FTTH-TM-01"
+        "substract": false  
     },
     "FTTH-TM-02": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.113",
@@ -645,7 +645,7 @@
         "name": "Torre Movilnet (OLT-2)",
         "type": "FTTH",
         "group": "Torre Movilnet (OLT-1-2)",
-        "key": "FTTH-TM-02"
+        "substract": false  
     },
     "FTTH-TCY-01": {
         "oid": ".1.3.6.1.2.1.31.1.1.1.10.3",
@@ -653,6 +653,6 @@
         "name": "Tocuyito (OLT-1)",
         "type": "FTTH",
         "group": "Tocuyito (OLT-1)",
-        "key": "FTTH-TCY-01"
+        "substract": false   
     }
 }

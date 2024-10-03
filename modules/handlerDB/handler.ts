@@ -1,7 +1,7 @@
-import { TrafficReport } from '../trafficReport/interfaces/trafficData'
 import mongoose from 'mongoose';
 import fs from 'fs';
-import { CACHE_FILE_PATH } from '../../server';
+import path from 'path';
+const cacheFile = path.join(__dirname, '../../cache/trafficDataCache.json');
 
 // Function to fetch the latest data from MongoDB and write to the cache file
 const compiledTrafficDataSchema = new mongoose.Schema({
@@ -9,7 +9,8 @@ const compiledTrafficDataSchema = new mongoose.Schema({
         data: [
             {
                 timestamp: { type: Date, required: true }, 
-                compiledReport: { type: String, required: true }
+                simpleReport: { type: String, required: true },
+                detaildReport: { type: String, required: true }                
             }
         ]
 });
@@ -33,7 +34,7 @@ const LooseTrafficDataSchema = mongoose.model('trafficreports', looseTrafficData
 export async function fetchTrafficDataFromDatabase () {
     try {
       const trafficData: {} = await CompTrafficData.find().sort({ 'data.timestamp': 1 });
-        fs.writeFileSync(CACHE_FILE_PATH, JSON.stringify(trafficData, null, 2));
+        fs.writeFileSync(cacheFile, JSON.stringify(trafficData, null, 2));
         console.log('Traffic data cache file updated');
     } catch (err) {
         console.error('Error fetching traffic data:', err);
@@ -43,9 +44,9 @@ export async function fetchTrafficDataFromDatabase () {
 export async function connectDB() {
     try {
         await mongoose.connect(process.env.MONGO_DB);
-        console.log('Conexión exitosa a la base de datos');
+        console.log('Successful connection to the database');
     } catch (err) {
-        console.error('Error conectando a la base de datos:', err);
+        console.error('Error connecting to the database:', err);
         process.exit(1);
     }
 }
@@ -89,20 +90,16 @@ async function submitLooseTrafficData(category: object, date: Date) {
         if (typeof device.mbps == 'string') mbpsChecked = 0;
         const dataToInsert = {
             timestamp: date, 
+            name: device.name,
             group: device.group,
             mbps: mbpsChecked
         };
         await pushLooseTrafficData(device.id, dataToInsert);
     }
 }
-export  async function submitToDB(detailedReport: TrafficReport, simpleResult: string, detailedResult: string) {
+export  async function submitToDB(simpleResult: string, detailedResult: string) {
     
     const date = new Date();
-
-    await submitLooseTrafficData(detailedReport.Proveedores, date);
-    await submitLooseTrafficData(detailedReport.Transportes, date);
-    await submitLooseTrafficData(detailedReport.BNG, date);
-    await submitLooseTrafficData(detailedReport.FTTH, date);
     
     const dataToInsert = {
         timestamp: date, 

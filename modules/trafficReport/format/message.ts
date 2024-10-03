@@ -1,109 +1,53 @@
-import { TrafficReport } from '../interfaces/trafficData';
+import { iTrafficReport } from '../interfaces/iTrafficData';
 
-export function detailed_report(detailedReport: TrafficReport, startTime: string): string {
-    let banner = `\n\n\n\n------ _Reporte detallado_ -------\n`;
-    let footer = `\n-------- _Estadísticas a la hora ${startTime}_ ---------`;
-    let prov = `\n*Proveedores:*\n\n`;
-    let totalProv = 0;
-    let trans = `\n*Transportes:*\n\n`;
-    let bng = `\n*BNG:*\n\n`;
-    let ftths = `\n*FTTH:*\n\n`;
+export function detailed_report(detailedReport: iTrafficReport, startTime: string, trafficReportTypes: string[]): string {
+    let resultText = `\n\n\n\n------ _Reporte detallado_ -------\n`;
+    let footer = `\n-------- _Estadísticas a la hora ${startTime}_ ---------\n`;
 
-    for (const item of detailedReport.Proveedores) {
-        const { name, id, mbps } = item;
-        if (typeof mbps === 'string') {
-            prov += `📌 *${name}:*  \`\`\`${mbps} Mbps\`\`\`\n`;
-            continue;
+    
+    for (const type of trafficReportTypes) {
+        let typeText = `\n*${type}:*\n\n`;
+        let totalType = 0;
+
+        
+        for (const item of detailedReport[type]) {
+            const { name, mbps } = item;
+            let mbpsValue = typeof mbps === 'string' ? mbps : Math.round(mbps);
+
+            
+            typeText += `📌 *${name}:*  \`\`\`${mbpsValue} Mbps\`\`\`\n`;
+            totalType += Number(mbps);
         }
-        prov += `📌 *${name}:*  \`\`\`${Math.round(mbps)} Mbps\`\`\`\n`;
-        totalProv = Number(mbps) + Number(totalProv);
-    }
-    prov += `📌 *Total Proveedores:*  \`\`\`${Math.round(totalProv)} Mbps\`\`\`\n`;
+        
+        typeText += `📌 *Total ${type}:*  \`\`\`${Math.round(totalType)} Mbps\`\`\`\n`;
 
-    // Reporte para Transportes
-    for (const item of detailedReport.Transportes) {
-        const { name, id, mbps } = item;
-        if (typeof mbps === 'string') {
-            trans += `📌 *${name}:*  \`\`\`${mbps} Mbps\`\`\`\n`;
-            continue;
-        }
-        trans += `📌 *${name}:*  \`\`\`${Math.round(mbps)} Mbps\`\`\`\n`;
+        resultText += typeText;
     }
 
-    // Reporte para BNG
-    for (const item of detailedReport.BNG) {
-        const { name, id, mbps } = item;
-        if (typeof mbps === 'string') {
-            bng += `📌 *${name}:*  \`\`\`${mbps} Mbps\`\`\`\n`;
-            continue;
-        }
-        bng += `📌 *${name}:*  \`\`\`${Math.round(mbps)} Mbps\`\`\`\n`;
-    }
-
-    // Reporte para FTTH
-    for (const item of detailedReport.FTTH) {
-        const { name, id, mbps } = item;
-        if (typeof mbps === 'string') {
-            ftths += `📌 *${name}:*  \`\`\`${mbps} Mbps\`\`\`\n`;
-            continue;
-        }
-        ftths += `📌 *${name}:*  \`\`\`${Math.round(mbps)} Mbps\`\`\`\n`;
-    }
-
-    // Combinando todo el reporte
-    return `${banner}${prov}${trans}${bng}${ftths}${footer}`;
+    return `${resultText}${footer}`;
 }
 
-export function simplified_report(trafficReport: TrafficReport, startTime:string): string {
+export function simplified_report(trafficReport: iTrafficReport, startTime: string, trafficReportTypes: string[]): string {
+    let resultText = `------ _Estado actual del tráfico_ -------\n`;
+    let footer = `\n-------- _Estadísticas a la hora ${startTime}_ ---------\n`;
 
-    let footer = `\n-------- _Estadísticas a la hora ${startTime}_ ---------`;
-    let prov = `\n*Proveedores:*\n\n`;
-    let totalProv = 0;
-    let trans = `\n*Transportes:*\n\n`;
-    let bng = `\n*BNG:*\n\n`;
-    let ftths = `\n*FTTH:*\n\n`;
-    let banner = `------ _Estado actual del trafico_ -------\n`
-    
-    //console.log(JSON.stringify(trafficReport));
+    for (const type of trafficReportTypes) {
+        let typeText = `\n*${type}:*\n\n`;
+        let totalType = 0;
+        
+        for (const item of trafficReport[type]) {
+            const { group, mbps } = item;
+            let mbpsValue = typeof mbps === 'string' ? mbps : Math.round(mbps);
 
-    // Add Proveedores traffic results with no decimals
-    for (const item of trafficReport.Proveedores) {
-        const { group, id, mbps } = item;
-        if (typeof mbps == 'string'){
-            prov += `📌 *${group}:*  \`\`\`${mbps} Mbps\`\`\`\n`; 
-            continue;
+            typeText += `📌 *${group}:*  \`\`\`${mbpsValue} Mbps\`\`\`\n`;
+            totalType += Number(mbps);
         }
-        prov += `📌 *${group}:*  \`\`\`${Math.round(mbps)} Mbps\`\`\`\n`;
-        totalProv = Number(mbps) + Number(totalProv);
-    }
-    prov += `📌 *Total Proveedores:*  \`\`\`${Math.round(totalProv)} Mbps\`\`\`\n`;
 
-    for (const item of trafficReport.Transportes) {
-        const { group, id, mbps } = item;
-        if (typeof mbps == 'string'){
-            trans += `📌 *${group}:*  \`\`\`${mbps} Mbps\`\`\`\n`; 
-            continue;
-        }
-        trans += `📌 *${group}:*  \`\`\`${Math.round(mbps)} Mbps\`\`\`\n`;
+        typeText += `📌 *Total ${type}:*  \`\`\`${Math.round(totalType)} Mbps\`\`\`\n`;
+
+        resultText += typeText;
+        
     }
 
-    for (const item of trafficReport.BNG) {
-        const { group, id, mbps } = item;
-        if (typeof mbps == 'string'){
-            bng += `📌 *${group}:*  \`\`\`${mbps} Mbps\`\`\`\n`; 
-            continue;
-        }
-        bng += `📌 *${group}:*  \`\`\`${Math.round(mbps)} Mbps\`\`\`\n`;
-    }
-
-    for (const item of trafficReport.FTTH) {
-        const { group, id, mbps } = item;
-        if (typeof mbps == 'string'){
-            ftths += `📌 *${group}:*  \`\`\`${mbps} Mbps\`\`\`\n`; 
-            continue;
-        }
-        ftths += `📌 *${group}:*  \`\`\`${Math.round(mbps)} Mbps\`\`\`\n`;
-    }
-
-    return `${banner}${prov}${trans}${bng}${ftths}${footer}\n`;
+    return `${resultText}${footer}`;
 }

@@ -1,32 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { GetReport } from './getReportPage';
+import { GetReport } from './getReport';
 
-interface TrafficReport {
+interface iTrafficReport {
     deviceId: string;
     data: {
         timestamp: string;
-        compiledReport: string;
+        simpleReport: string;
+        detailedReport: string; // Corregido el nombre de la propiedad
     }[];
 }
 
-interface TicketGroup {
+interface iTicketGroup {
     name: string;
     count: number;
-    items?: TicketGroup[];
+    items?: iTicketGroup[];
 }
 
 // Main App component
 export default function TrafficReportMainPage() {
-    const [trafficData, setTrafficData] = useState<TrafficReport[]>([]);
-    const [groupedData, setGroupedData] = useState<TicketGroup[]>([]);
+    const [trafficData, setTrafficData] = useState<iTrafficReport[]>([]);
+    const [groupedData, setGroupedData] = useState<iTicketGroup[]>([]);
     const [showGetReport, setShowGetReport] = useState(false); // State to control the visibility of GetReport
 
     // Fetch traffic data from the API
     useEffect(() => {
         async function fetchTrafficData() {
             try {
-                const response = await fetch('http://localhost:3001/api/traffic');
-                const data: TrafficReport[] = await response.json();
+                const response = await fetch('/api/traffic');
+                const data: iTrafficReport[] = await response.json();
+                console.log(data);
                 setTrafficData(data);
                 groupTrafficData(data);
             } catch (error) {
@@ -38,17 +40,19 @@ export default function TrafficReportMainPage() {
     }, []);
 
     // Group traffic data by month, date, and hour
-    const groupTrafficData = (data: TrafficReport[]) => {
-        const grouped: TicketGroup[] = [];
+    const groupTrafficData = (data: iTrafficReport[]) => {
+        const grouped: iTicketGroup[] = [];
 
         data.forEach(device => {
             device.data.forEach(report => {
                 const date = new Date(report.timestamp);
                 const month = date.toLocaleString('default', { month: 'long', year: 'numeric' });
-                const day = date.toLocaleString('default', { day: 'numeric', month: 'long' });                
+                const day = date.toLocaleString('default', { day: 'numeric', month: 'long' });
+
                 // Get the hour and minute, ensuring two digits for both
                 const hour = String(date.getHours()).padStart(2, '0');
-                const minutes = String((date.getMinutes()) - 1).padStart(2, '0');                
+                const minutes = String(date.getMinutes()).padStart(2, '0'); // Eliminado el restar 1
+
                 // Combine hour and minutes
                 const time = `${hour}:${minutes}`;
 
@@ -71,9 +75,13 @@ export default function TrafficReportMainPage() {
                 // Add the report to the day group
                 dayGroup.items?.push({
                     name: `${time}`,
-                    count: 1, // You could count the reports here or show additional info
-                    items: [{ name: report.compiledReport, count: 1 }]
+                    count: 1,
+                    items: [
+                        { name: report.simpleReport, count: 1 },
+                        { name: report.detailedReport, count: 2 }                 
+                    ]
                 });
+                console.log(dayGroup);
             });
         });
 
@@ -105,7 +113,7 @@ export default function TrafficReportMainPage() {
     };
 
     // Render group function
-    const renderGroup = (group: TicketGroup, level: number = 0) => {
+    const renderGroup = (group: iTicketGroup, level: number = 0) => {
         const isExpanded = expandedGroups.has(group.name);
         const hasItems = group.items && group.items.length > 0;
 
@@ -146,7 +154,7 @@ export default function TrafficReportMainPage() {
 
     return (
         <div>
-        {showGetReport && <GetReport />}        
+            {showGetReport && <GetReport />}
             <div className="container">
                 <div className="main-content">
                     <h1>Reportes de tráfico por hora</h1>

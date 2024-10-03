@@ -64,6 +64,17 @@ border: 5px solid #828483;
 .container-top{
   display: flex;
   justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: white;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  -moz-border-radius: 13px 13px 13px 13px;
+  border-radius: 13px 13px 13px 13px;
+  -webkit-border-radius: 13px 13px 13px 13px;
+  -moz-border-radius: 13px 13px 13px 13px;
+  background: #5c3f55;
+  border: solid #5c3f55;
 }
 .main-content {
     width: 70%;

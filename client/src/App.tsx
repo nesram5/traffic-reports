@@ -1,5 +1,5 @@
 import './App.css';
-import TrafficReportMainPage from './modules/historyPage';
+import TrafficReportMainPage from './modules/reports/trafficReportsPage';
 
 function App() {
   return (
