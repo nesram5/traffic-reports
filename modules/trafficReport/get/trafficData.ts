@@ -25,17 +25,30 @@ export function readDeviceList(): iTrafficData | string {
     }
 }
 
-async function get(target: string, oids: string): Promise<any> {
+
+function get(oids: string[], target: string) {
     return new Promise((resolve, reject) => {
-        let timeout = [1000];
+        let result:any = [];
         let community_name = process.env.COMUNNITY;
-        const session = new snmp.Session();
-        session.get({ oid: oids, host: target, timeouts: timeout, community: community_name }, (error, varbinds) => {
+        const options = {
+            port: 161,
+            host: target,
+            community: community_name,
+            timeouts: [1000, 1000, 1000],
+            version: 1   
+        };
+
+        const session = new snmp.Session(options);
+        session.getAll({ oids: oids }, function (error, varbinds) {
             session.close();
             if (error) {
-                reject(error);
+                reject(error);  
             } else {
-                resolve(varbinds[0].value);
+                result = []; 
+                varbinds.forEach(function (vb) {                    
+                    result.push(vb.value);
+                });
+                resolve(result); 
             }
         });
     });
@@ -45,7 +58,8 @@ export async function getAll(data: iTrafficData, sampleData: Array<Record<string
     for (let i = 0; i < 4; i++) {
         for (const device of Object.values(data)) {
             try {
-                const sample = await get(device.ip, device.oid);
+                               
+                const sample = await get(device.oid, device.ip);                
                 sampleData[i][device.name] = sample;
             } catch (error) {
                 console.log(error);
@@ -53,11 +67,7 @@ export async function getAll(data: iTrafficData, sampleData: Array<Record<string
             }
         }
         if (i < 3) {
-            await new Promise(resolve => setTimeout(resolve, 20000));
+            await new Promise(resolve => setTimeout(resolve, 30000));
         }
     }
 }
-
-
-
-

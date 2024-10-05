@@ -10,9 +10,11 @@ export function calculateTraffic(
         const name: string = device.name;
         const group: string = device.group;
         const deviceType: string = device.type;
-        
+        const ip = device.ip;
+        const substract = device.substract;
+        console.log(name, " ", substract);
         if (!sampleData[0][name] || !sampleData[1][name] || !sampleData[2][name] || !sampleData[3][name]) {
-            addDetailedReportError(detailedReport, deviceType, group, name, device.ip, device.substract);
+            addDetailedReportError(detailedReport, deviceType, group, name, ip, substract);
             continue;
         }
 
@@ -21,8 +23,8 @@ export function calculateTraffic(
 
         let avgResult: number = calculateAverage(result1, result2);
 
-        pushDetailedReport(detailedReport, deviceType, group, name, avgResult, device.substract);
-        pushSimpleReport(simpleReport, deviceType, group, name, avgResult, device.substract);
+        pushDetailedReport(detailedReport, deviceType, group, name, avgResult, substract);
+        pushSimpleReport(simpleReport, deviceType, group, name, avgResult, substract);
     }
 }
 
@@ -32,7 +34,7 @@ function addDetailedReportError(
     group: string,
     name: string,
     ip: string,
-    substract: boolean
+    substract: string
 ) {
     if (!detailedReport[deviceType]) {
         detailedReport[deviceType] = [];
@@ -46,13 +48,14 @@ function addDetailedReportError(
 }
 
 function calculateAverage(result1: number | string, result2: number | string): number {
+    console.log(result1," Resultado 1   \n",result2, "Resultado 2"  )
     if (typeof result1 === 'string' || typeof result2 === 'string') {
         return 0;
     }
-    if (!result1 || !result2) {
+    if (result1 === 0 || result2 === 0) {
         return Number(result1) + Number(result2);
     }
-    return (Number(result1) + Number(result2)) / 2;
+    return ((Number(result1) + Number(result2))) / 2;
 }
 
 function pushDetailedReport(
@@ -61,10 +64,13 @@ function pushDetailedReport(
     group: string,
     name: string,
     mbps: number,
-    substract: boolean
+    substract: string
 ) {
     if (!detailedReport[deviceType]) {
         detailedReport[deviceType] = [];
+    }
+    if (substract === "yes") {
+        mbps = mbps * -1;
     }
     detailedReport[deviceType].push({ group, mbps, name, substract });
 }
@@ -75,21 +81,22 @@ function pushSimpleReport(
     group: string,
     name: string,
     mbps: number,
-    substract: boolean
+    substract: string
 ) {
     if (!simpleReport[deviceType]) {
         simpleReport[deviceType] = [];
     }
 
     const existing = simpleReport[deviceType].find(item => item.group === group);
-
+        
     if (existing) {
-        if (existing.substract) {
-            existing.mbps = Number(existing.mbps) > mbps ? Number(existing.mbps) - mbps : mbps - Number(existing.mbps);
-        } else {
-            existing.mbps = Number(existing.mbps) + mbps;
+        if (substract === "yes") {
+            mbps = mbps * -1;
         }
+        // Sumar el nuevo valor de mbps al existente
+        existing.mbps = (existing.mbps as number) + mbps;
     } else {
+        // Si no existe el grupo, agregar uno nuevo
         simpleReport[deviceType].push({ group, name, mbps, substract });
     }
 }
@@ -100,7 +107,7 @@ function convertToMbps(firstPass: string, secondPass: string): number | string {
         const counter2 = BigInt(secondPass);
         const deltaCounter = counter2 - counter1;
         const deltaBits = deltaCounter * 8n;
-        const mbps = deltaBits / 20n / 1000000n;
+        const mbps = deltaBits / 30n / 1000000n;
         return Number(mbps);
     } catch (error: any) {
         return `Error: ${error.message}`;

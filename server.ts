@@ -7,6 +7,7 @@ import { exec } from "child_process";
 import { connectDB }  from './modules/handlerDB/handler';
 import { scheduleExecution } from './modules/schedule/task';
 import { router } from './modules/router/routes';
+import { testing1 } from './modules/trafficReport/main';
 
 const list_devices = path.join(__dirname, './modules/trafficReport/data/list_devices.json');
 const app = express();
@@ -29,9 +30,9 @@ app.listen(port, () => {
         console.error('File does not exist:', list_devices);
         return null; 
     }
-    connectDB();
+    //connectDB();
     console.log(`Server is running on ${process.env.SERVER}`);
-    exec(`explorer ${process.env.SERVER}`, (error, stdout, stderr) => {
+    /*exec(`explorer ${process.env.SERVER}`, (error, stdout, stderr) => {
         if (error) {
             console.error(`error: ${error.message}`);
             return;
@@ -40,7 +41,8 @@ app.listen(port, () => {
             console.error(`stderr: ${stderr}`);
             return;
         }
-    });
+    });*/
+    //testing1();
     scheduleExecution();
 })
 

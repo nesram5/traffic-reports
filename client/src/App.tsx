@@ -1,10 +1,11 @@
 import './App.css';
-import TrafficReportMainPage from './modules/reports/trafficReportsPage';
+import { TrafficReportMainPage } from './modules/reports/traffic-reports-page';
+import {TrafficReportDropDown } from './modules/reports/test'
 
 function App() {
   return (
     <div>
-      <TrafficReportMainPage/>
+      <TrafficReportDropDown/>
     </div>
   );
 }

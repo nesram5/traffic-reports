@@ -1,18 +1,18 @@
 export interface iTrafficData {
     [key: string]: {
         ip: string;
-        oid: string;
+        oid: string[];
         name: string;
         type: string;
         group: string;
-        substract: boolean
+        substract: string
     };
 }
 interface TrafficType {
     group: string;
     name: string;
     mbps: number | string;
-    substract: boolean 
+    substract: string 
 }
 export interface iTrafficReport {
     [key: string]: TrafficType[];
