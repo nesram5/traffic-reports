@@ -1,5 +1,5 @@
-import { iTrafficReport } from "./interfaces/iTrafficData";
-import { readDeviceList, getAll } from './get/trafficData';
+import { iTrafficReport } from "./interfaces/i-traffic-data";
+import { readDeviceList, getAll } from './get/traffic-data';
 import { initializeSimpleReport, calculateTraffic } from './calculate/traffic'
 import { submitToDB } from '../handlerDB/handler';
 import { simplified_report, detailed_report } from './format/message';

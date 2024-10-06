@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import snmp from 'snmp-native';
-import { iTrafficData } from '../interfaces/iTrafficData';
+import { iTrafficData } from '../interfaces/i-traffic-data';
 
 
 export function readDeviceList(): iTrafficData | string {

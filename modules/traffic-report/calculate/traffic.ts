@@ -1,4 +1,4 @@
-import { iTrafficData, iTrafficReport } from '../interfaces/iTrafficData';
+import { iTrafficData, iTrafficReport } from '../interfaces/i-traffic-data';
 
 export function calculateTraffic(
     data: iTrafficData,

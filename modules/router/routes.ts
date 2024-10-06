@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'path';
 import fs from 'fs';
-import { getReport } from '../trafficReport/main';
+import { getReport } from '../traffic-report/main';
 
 const cacheFile = path.join(__dirname, '../../cache/trafficDataCache.json');
 export const router = express.Router();

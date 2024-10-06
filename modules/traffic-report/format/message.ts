@@ -1,4 +1,4 @@
-import { iTrafficReport } from '../interfaces/iTrafficData';
+import { iTrafficReport } from '../interfaces/i-traffic-data';
 
 export function detailed_report(detailedReport: iTrafficReport, startTime: string, trafficReportTypes: string[]): string {
     let resultText = `\n\n\n\n------ _Reporte detallado_ -------\n`;

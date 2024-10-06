@@ -1,5 +1,5 @@
 import { fetchTrafficDataFromDatabase }  from '../handlerDB/handler';
-import { autoGetReport } from '../../modules/trafficReport/main';  
+import { autoGetReport } from '../traffic-report/main';  
 
 //Automatic execute functions
 async function executeEvery30Min() {

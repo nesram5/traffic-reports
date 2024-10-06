@@ -7,7 +7,7 @@ import { exec } from "child_process";
 import { connectDB }  from './modules/handlerDB/handler';
 import { scheduleExecution } from './modules/schedule/task';
 import { router } from './modules/router/routes';
-import { testing1 } from './modules/trafficReport/main';
+import { testing1 } from './modules/traffic-report/main';
 
 const list_devices = path.join(__dirname, './modules/trafficReport/data/list_devices.json');
 const app = express();
