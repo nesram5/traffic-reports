@@ -13,16 +13,19 @@ export function calculateTraffic(
         const ip = device.ip;
         const substract = device.substract;
         console.log(name, " ", substract);
-        if (!sampleData[0][name] || !sampleData[1][name] || !sampleData[2][name] || !sampleData[3][name]) {
+        if (!sampleData[0][name] || !sampleData[1][name] || !sampleData[2][name] || !sampleData[3][name] || !sampleData[4][name] || !sampleData[5][name] || !sampleData[6][name] || !sampleData[7][name] || !sampleData[8][name] || !sampleData[9][name]) {
             addDetailedReportError(detailedReport, deviceType, group, name, ip, substract);
             continue;
         }
+        const result:any = [];
+        result.push(convertToMbps(sampleData[0][name], sampleData[1][name]));
+        result.push(convertToMbps(sampleData[2][name], sampleData[3][name]));
+        result.push(convertToMbps(sampleData[4][name], sampleData[5][name]));
+        result.push(convertToMbps(sampleData[6][name], sampleData[7][name]));
+        result.push(convertToMbps(sampleData[8][name], sampleData[9][name]));
 
-        const result1: number | string = convertToMbps(sampleData[0][name], sampleData[1][name]);
-        const result2: number | string = convertToMbps(sampleData[2][name], sampleData[3][name]);
-
-        let avgResult: number = calculateAverage(result1, result2);
-
+        let avgResult: number = calculateAverage(result);
+        console.log("RESULTADO PROMEDIO ", avgResult);
         pushDetailedReport(detailedReport, deviceType, group, name, avgResult, substract);
         pushSimpleReport(simpleReport, deviceType, group, name, avgResult, substract);
     }
@@ -47,15 +50,28 @@ function addDetailedReportError(
     });
 }
 
-function calculateAverage(result1: number | string, result2: number | string): number {
-    console.log(result1," Resultado 1   \n",result2, "Resultado 2"  )
-    if (typeof result1 === 'string' || typeof result2 === 'string') {
-        return 0;
+function calculateAverage(result: number[] | string[] ): number {
+    console.log(JSON.stringify(result));
+    let total = 0;
+    let zeroValues = 0;
+    for (let value of result){
+        console.log(value);
+        if (value === 0) zeroValues+=1;        
+        if (typeof value === 'string') { 
+            zeroValues += 1, 
+            value = 0;
+        }
+        total += Number(value)
     }
-    if (result1 === 0 || result2 === 0) {
-        return Number(result1) + Number(result2);
-    }
-    return ((Number(result1) + Number(result2))) / 2;
+    //Correct average
+    if (zeroValues) { 
+        let divide = (5 - zeroValues);  
+        total = (total / divide); 
+        console.log(total);
+        return total;
+    };
+    total = total / 5;
+    return total
 }
 
 function pushDetailedReport(

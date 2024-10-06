@@ -15,7 +15,7 @@ export async function getReport(): Promise<string> {
     }    
     const detailedReport: iTrafficReport = {};
     const { simpleReport: simpleReport, trafficReportTypes } = initializeSimpleReport(deviceList);
-    const rawOutput: Array<Record<string, any>> = [[], [], [], []];
+    const rawOutput: Array<Record<string, any>> = [[], [], [], [], [], [], [], [], [], []];
 
     await getAll(deviceList, rawOutput);
     calculateTraffic(deviceList, rawOutput, detailedReport, simpleReport);

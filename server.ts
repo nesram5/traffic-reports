@@ -43,6 +43,6 @@ app.listen(port, () => {
         }
     });*/
     //testing1();
-    scheduleExecution();
+    //scheduleExecution();
 })
 

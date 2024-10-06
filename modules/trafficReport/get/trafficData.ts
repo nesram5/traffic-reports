@@ -26,7 +26,7 @@ export function readDeviceList(): iTrafficData | string {
 }
 
 
-function get(oids: string[], target: string) {
+async function get(oids: string[], target: string) {
     return new Promise((resolve, reject) => {
         let result:any = [];
         let community_name = process.env.COMUNNITY;
@@ -55,7 +55,7 @@ function get(oids: string[], target: string) {
 }
 
 export async function getAll(data: iTrafficData, sampleData: Array<Record<string, any>>) {
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 10; i++) {
         for (const device of Object.values(data)) {
             try {
                                
@@ -66,7 +66,7 @@ export async function getAll(data: iTrafficData, sampleData: Array<Record<string
                 sampleData[i][device.name] = false;
             }
         }
-        if (i < 3) {
+        if (i < 9) {
             await new Promise(resolve => setTimeout(resolve, 30000));
         }
     }
