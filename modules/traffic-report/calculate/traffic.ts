@@ -1,12 +1,11 @@
 import { iTrafficData, iTrafficReport } from '../interfaces/traffic-data';
-import { NUMBER_OF_SAMPLES } from '../main'
 
 export function calculateTraffic(
     data: iTrafficData,
     sampleData: Array<Record<string, any>>,
     detailedReport: iTrafficReport,
-    simpleReport: iTrafficReport
-) {
+    simpleReport: iTrafficReport,
+    samplesNumber: number) {
     for (const device of Object.values(data)) {
         const name: string = device.name;
         const group: string = device.group;
@@ -16,7 +15,7 @@ export function calculateTraffic(
 
        //Check if values exists in the array
         let allSamplesExist = true;
-        for (let i = 0; i < NUMBER_OF_SAMPLES; i++) {
+        for (let i = 0; i < samplesNumber; i++) {
             if (!sampleData[i][name]) {
                 allSamplesExist = false;
                 break; 
@@ -28,12 +27,12 @@ export function calculateTraffic(
         }
         //Process Data
         const result:any = [];
-        for (let i = 0; i < NUMBER_OF_SAMPLES; i += 2) {
+        for (let i = 0; i < samplesNumber; i += 2) {
             if (sampleData[i] && sampleData[i + 1]) { // Ensure that both elements exist
                 result.push(convertToMbps(sampleData[i][name], sampleData[i + 1][name]));
             }
         }
-        let avgResult: number = calculateAverage(result, substract);     
+        let avgResult: number = calculateAverage(result, substract, samplesNumber) ;     
         //Export processed data
         pushDetailedReport(detailedReport, deviceType, group, name, avgResult, substract);
         pushSimpleReport(simpleReport, deviceType, group, name, avgResult, substract);
@@ -59,8 +58,8 @@ function addDetailedReportError(
     });
 }
 
-function calculateAverage(result: number[] | string[], substract: string ): number {
-    const numberOfresults = NUMBER_OF_SAMPLES / 2
+function calculateAverage(result: number[] | string[], substract: string, samplesNumber: number ): number {
+    const numberOfresults = samplesNumber / 2
    
     let total = 0;
     let zeroValues = 0;
@@ -110,6 +109,7 @@ function pushDetailedReport(
     if (!detailedReport[deviceType]) {
         detailedReport[deviceType] = [];
     }
+    //Convert value to negative for be substracted at the message function
     if (substract === "yes") {
         mbps = mbps * -1;
     }
@@ -130,7 +130,10 @@ function pushSimpleReport(
       let existing = simpleReport[deviceType].find(item => item.group === group);
         
     if (existing) {
-
+        //Convert value to negative for be substracted
+        if (substract === "yes") {
+            mbps = mbps * -1;
+        }
         existing.mbps = (existing.mbps as number) + mbps;
        
     } else {

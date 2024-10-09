@@ -123,17 +123,65 @@
     "oid": [[1,3,6,1,2,1,31,1,1,1,10,100100]],
     "ip": "10.0.0.1",
     "name": "Guacara - Netcom Plus ( 20 Gbps)",
-    "type": "Transportes",
+    "type": "Transportes Internos",
     "group": "Guacara - Netcom Plus ( 20 Gbps)",
-    "substract": "yes"
+    "substract": "no"
     },
     "TD-Dayco-MRD": {
     "oid": [[1,3,6,1,2,1,31,1,1,1,10,5023]],
     "ip": "10.0.0.1",
     "name": "Mirador - Netcom Plus (10 Gbps)",
-    "type": "Transportes",
+    "type": "Transportes Internos",
     "group": "Mirador - Netcom Plus (10 Gbps)",
-    "substract": "yes"
+    "substract": "no"
+    },
+    "TD-Dayco-LPQ": {
+    "oid": [[1,3,6,1,2,1,31,1,1,1,10,100020]],
+    "ip": "10.0.0.1",
+    "name": "Los Parques - Netcom Plus (20 Gbps)",
+    "type": "Transportes Internos",
+    "group": "Los Parques  - Netcom Plus (20 Gbps)",
+    "substract": "no"
+    },
+    "TD-Dayco-FM": {
+    "oid": [[1,3,6,1,2,1,31,1,1,1,10,100040]],
+    "ip": "10.0.0.1",
+    "name": "Fundacion Mendoza - Netcom Plus (20 Gbps)",
+    "type": "Transportes Internos",
+    "group": "Fundacion Mendoza - Netcom Plus (20 Gbps)",
+    "substract": "no"
+    },
+    "TD-Dayco-SLA": {
+    "oid": [[1,3,6,1,2,1,31,1,1,1,10,100070]],
+    "ip": "10.0.0.1",
+    "name": "Shangri LA- Netcom Plus (10 Gbps)",
+    "type": "Transportes Internos",
+    "group": "Shangri LA- Netcom Plus (10 Gbps)",
+    "substract": "no"
+    },
+    "TD-Dayco-GYS": {
+    "oid": [[1,3,6,1,2,1,31,1,1,1,10,100080]],
+    "ip": "10.0.0.1",
+    "name": "Los Guayos - Netcom Plus (10 Gbps)",
+    "type": "Transportes Internos",
+    "group": "Los Guayos - Netcom Plus (10 Gbps)",
+    "substract": "no"
+    },
+    "TD-Dayco-CPY": {
+    "oid": [[1,3,6,1,2,1,31,1,1,1,10,100010]],
+    "ip": "10.0.0.1",
+    "name": "Copey - Netcom Plus (10 Gbps)",
+    "type": "Transportes Internos",
+    "group": "Copey - Netcom Plus (10 Gbps)",
+    "substract": "no"
+    },
+    "TD-Dayco-CPYA": {
+    "oid": [[1,3,6,1,2,1,31,1,1,1,10,5014]],
+    "ip": "10.0.0.1",
+    "name": "Copey Arriba - Netcom Plus (10 Gbps)",
+    "type": "Transportes Internos",
+    "group": "Copey Arriba - Netcom Plus (10 Gbps)",
+    "substract": "no"
     },
     "BNG-01": {
     "oid": [[1,3,6,1,2,1,31,1,1,1,10,200010]],

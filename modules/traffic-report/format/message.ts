@@ -1,7 +1,8 @@
 import { iTrafficReport } from '../interfaces/traffic-data';
 
 
-export function detailed_report(detailedReport: iTrafficReport, startTime: string, trafficReportTypes: string[]): string {
+export function detailed_report(detailedReport: iTrafficReport, trafficReportTypes: string[]): string {
+    const startTime = new Date().toLocaleTimeString();
     let resultText = `\n\n\n\n------ _Reporte detallado_ -------\n`;
     let footer = `\n-------- _Estadísticas a la hora ${startTime}_ ---------\n`;
       
@@ -27,10 +28,11 @@ export function detailed_report(detailedReport: iTrafficReport, startTime: strin
     return `${resultText}${footer}`;
 }
 
-export function simplified_report(trafficReport: iTrafficReport, startTime: string, trafficReportTypes: string[]): string {
+export function simplified_report(trafficReport: iTrafficReport, trafficReportTypes: string[]): string {
+    const startTime = new Date().toLocaleTimeString();
     let resultText = `------ _Estado actual del tráfico_ -------\n`;
     let footer = `\n-------- _Estadísticas a la hora ${startTime}_ ---------\n`;
-
+    
     let day = Date.now();
     
     for (const type of trafficReportTypes) {

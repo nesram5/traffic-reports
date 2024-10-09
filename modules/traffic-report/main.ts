@@ -5,12 +5,11 @@ import { submitToDB } from '../handlerDB/submit';
 import { fetchTrafficDataFromDB } from '../handlerDB/fetch';
 import { simplified_report, detailed_report } from './format/message';
 
-
-//Global variables
-export const NUMBER_OF_SAMPLES = 4;
-export const SAMPLE_INTERVAL = 30000;
-
-export async function getReport(): Promise<{ simpleResult:string, detailedResult:string}>  {
+export async function getReport(
+    samplesNumber: number = 8, 
+    samplesInterval: number = 15000
+    ): Promise<{ simpleResult:string, detailedResult:string}>  
+{
     const startTime = new Date().toLocaleTimeString();
 
     console.log(`Process started at: ${startTime}`);
@@ -24,20 +23,21 @@ export async function getReport(): Promise<{ simpleResult:string, detailedResult
 
     let { simpleReport: simpleReport, trafficReportTypes } = initializeSimpleReport(deviceList);
    
-    let rawOutput = createEmptyArray(NUMBER_OF_SAMPLES);
+    let rawOutput = createEmptyArray(samplesNumber);
 
-    await getAll(deviceList, rawOutput, SAMPLE_INTERVAL);
+    await getAll(deviceList, rawOutput, samplesInterval);
 
-    calculateTraffic(deviceList, rawOutput, detailedReport, simpleReport);
+    calculateTraffic(deviceList, rawOutput, detailedReport, simpleReport, samplesNumber);
 
-    let simpleResult = simplified_report(simpleReport, startTime, trafficReportTypes);
-    let detailedResult = detailed_report(detailedReport, startTime, trafficReportTypes);
+    let simpleResult = simplified_report(simpleReport, trafficReportTypes);
+    let detailedResult = detailed_report(detailedReport, trafficReportTypes);
  
     return { simpleResult, detailedResult}
 }
 
 export async function autoGetReport() {
-    let {simpleResult: simpleResult, detailedResult: detailedResult} = await getReport()
+
+    let {simpleResult: simpleResult, detailedResult: detailedResult} = await getReport(3,180000);
     submitToDB(simpleResult, detailedResult);
     fetchTrafficDataFromDB();
 }
