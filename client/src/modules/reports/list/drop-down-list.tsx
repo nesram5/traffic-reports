@@ -1,12 +1,28 @@
-import React, { useState } from 'react';
-import { IDateGroupProps, IMonthGroup, IDayGroup } from '../interface/date-group';
+import React, { useState, useEffect } from 'react';
+import { CodeBlock } from '../../copy-box/copy';
 
-const copyToClipboard = (text: string) => {
-    navigator.clipboard.writeText(text);
-    alert('Copied to clipboard!');
-};
+// Data interfaces
+interface IItem {
+    first: string;
+    second: string;
+}
 
-const RecursiveDayGroup: React.FC<{ dayGroup: IDayGroup }> = ({ dayGroup }) => {
+interface IGroupItem {
+    hour: string;
+    items: IItem[];
+}
+
+interface IDayGroup {
+    day: string;
+    groupItems: IGroupItem[];
+}
+interface IMonthGroup {
+    month: string;
+    dayGroups: IDayGroup[];
+}
+
+// MonthGroup component (top level)
+const MonthGroup: React.FC<{ month: string, dayGroups: IDayGroup[] }> = ({ month, dayGroups }) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     const toggleExpand = () => {
@@ -14,39 +30,23 @@ const RecursiveDayGroup: React.FC<{ dayGroup: IDayGroup }> = ({ dayGroup }) => {
     };
 
     return (
-        <div className="group-header">
-            <div onClick={toggleExpand} style={{ cursor: 'pointer', marginLeft: '35px' }}>
-                {dayGroup.day}
+        <div className='container-list'>
+            <div className="group-fold" onClick={toggleExpand} style={{ fontWeight: 'bold' }}>
+                {month}
             </div>
-            {isExpanded &&
-                dayGroup.groupItems.map((groupItem, hourIdx) => (
-                    <div className="group-name" key={hourIdx} style={{ marginLeft: '30px' }}>
-                        <div>{groupItem.hour}</div>
-                        {groupItem.items.map((item, itemIdx) => (
-                            <div key={itemIdx} style={{ marginLeft: '45px' }}>
-                                <div className="group-items">{item.first}</div>
-                                <button
-                                    className="copy-btn"
-                                    onClick={() => copyToClipboard(item.first)}
-                                >
-                                    Copy
-                                </button>
-                                <div className="group-items">{item.second}</div>
-                                <button
-                                    className="copy-btn"
-                                    onClick={() => copyToClipboard(item.second)}
-                                >
-                                    Copy
-                                </button>
-                            </div>
-                        ))}
-                    </div>
-                ))}
+            {isExpanded && (
+                <div className="expandable">
+                    {dayGroups.map((dayGroup, index) => (
+                        <DayGroup key={index} day={dayGroup.day} groupItems={dayGroup.groupItems} />
+                    ))}
+                </div>
+            )}
         </div>
     );
 };
 
-const RecursiveMonthGroup: React.FC<{ group: IMonthGroup }> = ({ group }) => {
+// DayGroup component (second level)
+const DayGroup: React.FC<{ day: string, groupItems: IGroupItem[] }> = ({ day, groupItems }) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     const toggleExpand = () => {
@@ -54,29 +54,73 @@ const RecursiveMonthGroup: React.FC<{ group: IMonthGroup }> = ({ group }) => {
     };
 
     return (
-        <div className="group-header">
-            <div onClick={toggleExpand} style={{ cursor: 'pointer', fontWeight: 'bold' }}>
-                {group.month}
+        <div className='container-list'>
+            <div className="group-fold"  onClick={toggleExpand}>
+                {day}
             </div>
-            {isExpanded &&
-                group.dayGroups.map((dayGroup, dayIdx) => (
-                    <RecursiveDayGroup key={dayIdx} dayGroup={dayGroup} />
-                ))}
+            {isExpanded && (
+                <div className="expandable">
+                    {groupItems.map((groupItem, index) => (
+                        <GroupItem key={index} hour={groupItem.hour} items={groupItem.items} />
+                    ))}
+                </div>
+            )}
         </div>
     );
 };
 
-export const DropDownList: React.FC<IDateGroupProps> = ({ data }) => {
+// GroupItem component (third level)
+const GroupItem: React.FC<{ hour: string, items: IItem[] }> = ({ hour, items }) => {
+    const [isExpanded, setIsExpanded] = useState(false);
+    const toggleExpand = () => {
+        setIsExpanded(!isExpanded);
+    };
+
+    return (
+        <div className='container-list'>
+            <div className="group-fold" onClick={toggleExpand}>
+                {hour}
+            </div>
+            {isExpanded && (
+                <div>
+                    {items.map((item, index) => (
+                        <div key={index} className='expandable'>
+                            <CodeBlock code={item.first.toString()} />
+                            <div></div>
+                            <CodeBlock code={item.second.toString()} />
+                        </div>
+                    ))}
+                </div>
+            )}
+        </div>
+    );
+};
+
+// Main component that renders the whole structure
+export const TrafficReportDropDown: React.FC = () => {
+   
+
+    const [monthData, setMonthData] = useState<IMonthGroup[]>([]);
+
+    // Fetch traffic data from the API
+    useEffect(() => {
+        async function fetchTrafficData() {
+            try {
+                const response = await fetch('/api/traffic');
+                setMonthData(await response.json());
+            } catch (error) {
+                console.error('Error fetching traffic data:', error);
+            }
+        }
+
+        fetchTrafficData();
+    }, []);
+
     return (
         <div>
-            {data.map((group: IMonthGroup, index) => (
-                <div key={index}>
-                    <h2>{group.month}</h2>
-                    <RecursiveMonthGroup key={index} group={group} />
-                </div>
-            ))}
-        </div>
+                {monthData.map((monthGroup, index) => (
+                    <MonthGroup key={index} month={monthGroup.month} dayGroups={monthGroup.dayGroups} />
+                ))}
+       </div>
     );
 };
-
-export default DropDownList;

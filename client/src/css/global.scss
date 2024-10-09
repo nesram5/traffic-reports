@@ -2,37 +2,30 @@ $pageBackground:  #1c1d23;
 $fontColor: white;
 $groupColor: #5c3f55;
 $hoverGroupColor: #a0a0a0;
+$buttonGenerateRep:  #007bff;
+
 body{
   background-color:  $pageBackground;
   font-family: Arial;  
   font-size: medium ;
   color: $fontColor;
 }
-
 .parent {
   flex-direction: column;
   display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 85vh;
-    margin: 0;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
   padding: 20px;
 }
-
 .main-section {
   width: 100%;
   max-width: 800px;
   padding: 20px;
 }
-
 h1 {
   text-align: center;
   margin-bottom: 20px;
-}
-.main-section {
-  width: 100%;
-  max-width: 800px;
-  padding: 20px;
 }
 
 .title-and-button {
@@ -42,16 +35,16 @@ h1 {
   align-content: center;
   align-items: center;
 }
+
+/*DROP DOWN MENU*/
 .drop-down-menu{
   padding-top: 20%;
 }
-
 .group-fold { 
   display: inline-flex;
   align-items: center;
   padding: 5px;  
   cursor: pointer;
-  /*width: 70vh;*/
   height: 30px;
   border-radius: 40px;
   border: 10px solid $pageBackground;
@@ -69,9 +62,9 @@ h1 {
   flex-direction: column-reverse; 
   margin-top: 5%;   
 }
+/*END DROP DOWN MENU*/
 
 /*CODE BLOCK*/
-
 .code-block {
   position: relative;
   background-color: $groupColor;
@@ -107,11 +100,12 @@ h1 {
   background-color: #b3b3b3;
   color: black;
 }
+/*END CODE BLOCK*/
 
-//GET REPORT
+/*GET REPORT*/
 .generate-button {
-  background-color: #007bff;
-  color: white;
+  background-color: $buttonGenerateRep;
+  color: $fontColor;
   border: none;
   padding: 10px 15px;
   border-radius: 5px;
@@ -121,10 +115,27 @@ h1 {
 .generate-button:hover {
   background-color: #0056b3;
 }
-
 .report-section {
   margin-top: 20px;
   padding: 15px;
-  background-color: $pageBackground;
  
 }
+.get-report{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.progress {
+  display: block;
+  align-self: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.progress-bar {
+  width: 0;
+  height: 20px;
+  background-color: #4caf50;
+  border-radius: 10px;
+}
+/*END GET REPORT*/

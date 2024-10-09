@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import snmp from 'snmp-native';
-import { iTrafficData } from '../interfaces/i-traffic-data';
+import { iTrafficData } from '../interfaces/traffic-data';
 
 
 export function readDeviceList(): iTrafficData | string {
@@ -26,9 +26,10 @@ export function readDeviceList(): iTrafficData | string {
 }
 
 
-async function get(oids: string[], target: string) {
+async function get(oids: string[], target: string): Promise<[number]>{
     return new Promise((resolve, reject) => {
         let result:any = [];
+
         let community_name = process.env.COMUNNITY;
         const options = {
             port: 161,
@@ -47,6 +48,7 @@ async function get(oids: string[], target: string) {
                 result = []; 
                 varbinds.forEach(function (vb) {                    
                     result.push(vb.value);
+                    result.push(vb.receiveStamp);
                 });
                 resolve(result); 
             }
@@ -54,20 +56,21 @@ async function get(oids: string[], target: string) {
     });
 }
 
-export async function getAll(data: iTrafficData, sampleData: Array<Record<string, any>>) {
-    for (let i = 0; i < 10; i++) {
+export async function getAll(data: iTrafficData, sampleData: Array<Record<string, any>>, sampleInterval: number) {
+    for (let i = 0; i < 4; i++) {
         for (const device of Object.values(data)) {
             try {
                                
-                const sample = await get(device.oid, device.ip);                
-                sampleData[i][device.name] = sample;
+                const result = await get(device.oid, device.ip);        
+
+                sampleData[i][device.name] = result;
             } catch (error) {
                 console.log(error);
-                sampleData[i][device.name] = false;
+                sampleData[i][device.name] = [0,0];
             }
         }
-        if (i < 9) {
-            await new Promise(resolve => setTimeout(resolve, 30000));
+        if (i < 3) {
+            await new Promise(resolve => setTimeout(resolve, sampleInterval));
         }
     }
 }

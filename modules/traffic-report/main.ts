@@ -1,65 +1,43 @@
-import { iTrafficReport } from "./interfaces/i-traffic-data";
+import { iTrafficReport } from "./interfaces/traffic-data";
 import { readDeviceList, getAll } from './get/traffic-data';
-import { initializeSimpleReport, calculateTraffic } from './calculate/traffic'
-import { submitToDB } from '../handlerDB/handler';
+import { initializeSimpleReport, createEmptyArray, calculateTraffic } from './calculate/traffic'
+import { submitToDB } from '../handlerDB/submit';
+import { fetchTrafficDataFromDB } from '../handlerDB/fetch';
 import { simplified_report, detailed_report } from './format/message';
 
 
-export async function getReport(): Promise<string> {
+//Global variables
+export const NUMBER_OF_SAMPLES = 4;
+export const SAMPLE_INTERVAL = 30000;
+
+export async function getReport(): Promise<{ simpleResult:string, detailedResult:string}>  {
     const startTime = new Date().toLocaleTimeString();
+
     console.log(`Process started at: ${startTime}`);
             
     const deviceList = readDeviceList();
     if (typeof deviceList === 'string'){        
-        return deviceList
-    }    
-    const detailedReport: iTrafficReport = {};
-    const { simpleReport: simpleReport, trafficReportTypes } = initializeSimpleReport(deviceList);
-    const rawOutput: Array<Record<string, any>> = [[], [], [], [], [], [], [], [], [], []];
+        return {simpleResult: deviceList, detailedResult: deviceList}
+    }
 
-    await getAll(deviceList, rawOutput);
+    let detailedReport: iTrafficReport = {};
+
+    let { simpleReport: simpleReport, trafficReportTypes } = initializeSimpleReport(deviceList);
+   
+    let rawOutput = createEmptyArray(NUMBER_OF_SAMPLES);
+
+    await getAll(deviceList, rawOutput, SAMPLE_INTERVAL);
+
     calculateTraffic(deviceList, rawOutput, detailedReport, simpleReport);
-    const simpleResult = simplified_report(simpleReport, startTime, trafficReportTypes);
-    const detailedResult = detailed_report(detailedReport, startTime, trafficReportTypes);
-    const resultMessage = simpleResult + detailedResult;
-    //submitToDB(simpleResult, detailedResult);
-    return resultMessage;
+
+    let simpleResult = simplified_report(simpleReport, startTime, trafficReportTypes);
+    let detailedResult = detailed_report(detailedReport, startTime, trafficReportTypes);
+ 
+    return { simpleResult, detailedResult}
 }
 
 export async function autoGetReport() {
-    const startTime = new Date().toLocaleTimeString();
-    console.log(`Generating report of: ${startTime}`);
-            
-    const deviceList = readDeviceList();
-    if (typeof deviceList === 'string'){        
-        return deviceList
-    }    
-    const detailedReport: iTrafficReport = {};
-    const { simpleReport: simpleReport, trafficReportTypes } = initializeSimpleReport(deviceList);
-    const rawOutput: Array<Record<string, any>> = [[], [], [], []];
-
-    await getAll(deviceList, rawOutput);
-    calculateTraffic(deviceList, rawOutput, detailedReport, simpleReport);
-    const simpleResult = simplified_report(simpleReport, startTime, trafficReportTypes);
-    const detailedResult = detailed_report(detailedReport, startTime, trafficReportTypes);
-    //submitToDB(simpleResult, detailedResult);
-}
-
-export async function testing1() {
-    const startTime = new Date().toLocaleTimeString();
-    console.log(`Generating report of: ${startTime}`);
-
-    const deviceList = readDeviceList();
-    if (typeof deviceList === 'string'){        
-        return deviceList
-    }    
-    const detailedReport: iTrafficReport = {};
-    const { simpleReport: simpleReport, trafficReportTypes } = initializeSimpleReport(deviceList);
-    const rawOutput: Array<Record<string, any>> = [[], [], [], [], [], [], [], [], [], []];
-
-    await getAll(deviceList, rawOutput);
-    console.log(rawOutput);
-    calculateTraffic(deviceList, rawOutput, detailedReport, simpleReport);
-    const simpleResult = simplified_report(simpleReport, startTime, trafficReportTypes);
-    const detailedResult = detailed_report(detailedReport, startTime, trafficReportTypes);
+    let {simpleResult: simpleResult, detailedResult: detailedResult} = await getReport()
+    submitToDB(simpleResult, detailedResult);
+    fetchTrafficDataFromDB();
 }

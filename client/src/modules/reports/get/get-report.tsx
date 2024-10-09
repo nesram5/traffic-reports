@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { CodeBlock } from '../../copy-box/copy';
 
 export const GetReport: React.FC = () => {
     const [progress, setProgress] = useState<number>(0);
-    const [result, setResult] = useState<string>('Results will appear here...');
+    const [simpleResult, setSimpleResult] = useState<string>('');
+    const [detailedResult, setDetailedResult] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
 
-    // Function to start fetching the report and updating the progress bar
+
     const handleStart = () => {
         setLoading(true);
-        setResult('Cargando el reporte por favor espere 1 min');
+        setSimpleResult('  Cargando el reporte... ');
+        setDetailedResult('Por favor espere 2 min');
         setProgress(0);
 
-        // Simulate progress
         let currentProgress = 0;
         const interval = setInterval(() => {
             currentProgress += 1;
@@ -20,39 +22,46 @@ export const GetReport: React.FC = () => {
             if (currentProgress >= 100) {
                 clearInterval(interval);
             }
-        }, 600); // Update every 600 ms for a 60-second total duration
+        }, 1200); // Update every 600 ms for a 60-second total duration
 
-        // Fetch the report data (mocked API call)
         fetch('/get-report')
             .then(response => response.json())
             .then(data => {
-                setProgress(100); // Ensure the progress bar is full
-                setResult(data.message);
+                setProgress(100);
+                setSimpleResult(data.message.simpleResult); 
+                setDetailedResult(data.message.detailedResult); 
                 setLoading(false);
             })
             .catch(error => {
-                setProgress(50); // Partial progress in case of error
+                setProgress(50); 
                 console.error('Error:', error);
-                setResult('Error fetching SNMP data.');
+                setSimpleResult('Error fetching SNMP data.');
+                setDetailedResult('');
                 setLoading(false);
             });
     };
 
-    // UseEffect hook to run handleStart when the component is first displayed
     useEffect(() => {
-        handleStart(); // Automatically start when the component mounts
+        handleStart(); 
     }, []);
 
     return (
-        <div className="container-top">
-            <div className="progress">
-                <div
-                    className="progress-bar"
-                    style={{ width: `${progress}%` }}
-                ></div>
+        <div>
+            {progress == 100 && (
+            <div className="get-report">
+                {/* Display the results in CodeBlock components */}
+                <CodeBlock code={simpleResult} />
+                <CodeBlock code={detailedResult} />
             </div>
-                         
-            <pre className="result">{result}</pre>
+            )}
+            {/* Conditionally render the progress bar */}
+            {progress < 100 && (
+                <div className="progress">
+                    <div className="progress-bar" 
+                        style={{ width: `${progress}%` }}>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

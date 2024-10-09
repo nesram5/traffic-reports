@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-//import './copy.css' moved to global.css
 import ReactMarkdown from 'react-markdown';
 interface CodeBlockProps {
   code: string;

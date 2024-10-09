@@ -34,3 +34,5 @@ router.get('/get-report', async (req, res) => {
         res.status(500).json({ error: 'Error during SNMP scan.' });
     }
 });
+
+

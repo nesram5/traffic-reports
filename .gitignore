@@ -2,8 +2,8 @@
 .env
 node_modules
 client/node_modules
-modules/trafficReport/data/list_devices.json
-cache\trafficDataCache.json
+modules/traffic-report/data/list_devices.json
+
 *.bak
 
 

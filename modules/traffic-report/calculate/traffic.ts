@@ -1,4 +1,5 @@
-import { iTrafficData, iTrafficReport } from '../interfaces/i-traffic-data';
+import { iTrafficData, iTrafficReport } from '../interfaces/traffic-data';
+import { NUMBER_OF_SAMPLES } from '../main'
 
 export function calculateTraffic(
     data: iTrafficData,
@@ -12,20 +13,28 @@ export function calculateTraffic(
         const deviceType: string = device.type;
         const ip = device.ip;
         const substract = device.substract;
-        console.log(name, " ", substract);
-        if (!sampleData[0][name] || !sampleData[1][name] || !sampleData[2][name] || !sampleData[3][name] || !sampleData[4][name] || !sampleData[5][name] || !sampleData[6][name] || !sampleData[7][name] || !sampleData[8][name] || !sampleData[9][name]) {
+
+       //Check if values exists in the array
+        let allSamplesExist = true;
+        for (let i = 0; i < NUMBER_OF_SAMPLES; i++) {
+            if (!sampleData[i][name]) {
+                allSamplesExist = false;
+                break; 
+            }
+        }
+        if (!allSamplesExist) {
             addDetailedReportError(detailedReport, deviceType, group, name, ip, substract);
             continue;
         }
+        //Process Data
         const result:any = [];
-        result.push(convertToMbps(sampleData[0][name], sampleData[1][name]));
-        result.push(convertToMbps(sampleData[2][name], sampleData[3][name]));
-        result.push(convertToMbps(sampleData[4][name], sampleData[5][name]));
-        result.push(convertToMbps(sampleData[6][name], sampleData[7][name]));
-        result.push(convertToMbps(sampleData[8][name], sampleData[9][name]));
-
-        let avgResult: number = calculateAverage(result);
-        console.log("RESULTADO PROMEDIO ", avgResult);
+        for (let i = 0; i < NUMBER_OF_SAMPLES; i += 2) {
+            if (sampleData[i] && sampleData[i + 1]) { // Ensure that both elements exist
+                result.push(convertToMbps(sampleData[i][name], sampleData[i + 1][name]));
+            }
+        }
+        let avgResult: number = calculateAverage(result, substract);     
+        //Export processed data
         pushDetailedReport(detailedReport, deviceType, group, name, avgResult, substract);
         pushSimpleReport(simpleReport, deviceType, group, name, avgResult, substract);
     }
@@ -50,27 +59,43 @@ function addDetailedReportError(
     });
 }
 
-function calculateAverage(result: number[] | string[] ): number {
-    console.log(JSON.stringify(result));
+function calculateAverage(result: number[] | string[], substract: string ): number {
+    const numberOfresults = NUMBER_OF_SAMPLES / 2
+   
     let total = 0;
     let zeroValues = 0;
+    let prevValue= [];
+    let i = 0;
     for (let value of result){
-        console.log(value);
         if (value === 0) zeroValues+=1;        
         if (typeof value === 'string') { 
-            zeroValues += 1, 
+            zeroValues += 1; 
             value = 0;
         }
+        //Prevent wrong values from snmp
+        prevValue[i] = value;
+        if(!i && (value*2) > prevValue[i] ){
+            value = 0;
+            zeroValues += 1;
+        }
         total += Number(value)
+        i++;
     }
+    
+    if (zeroValues === numberOfresults ) { return 0 };
     //Correct average
     if (zeroValues) { 
-        let divide = (5 - zeroValues);  
-        total = (total / divide); 
-        console.log(total);
+        let divide = (numberOfresults - zeroValues);  
+        total = (total / divide);
         return total;
     };
-    total = total / 5;
+
+    total/=numberOfresults;
+
+    //Convert value to negative for be substracted at the push function
+    if (substract === "yes"){
+        total*=-1;
+    }
     return total
 }
 
@@ -102,32 +127,36 @@ function pushSimpleReport(
     if (!simpleReport[deviceType]) {
         simpleReport[deviceType] = [];
     }
-
-    const existing = simpleReport[deviceType].find(item => item.group === group);
+      let existing = simpleReport[deviceType].find(item => item.group === group);
         
     if (existing) {
-        if (substract === "yes") {
-            mbps = mbps * -1;
-        }
-        // Sumar el nuevo valor de mbps al existente
+
         existing.mbps = (existing.mbps as number) + mbps;
+       
     } else {
-        // Si no existe el grupo, agregar uno nuevo
         simpleReport[deviceType].push({ group, name, mbps, substract });
     }
+
 }
 
-function convertToMbps(firstPass: string, secondPass: string): number | string {
+function convertToMbps(firstPass: any[], secondPass: any[]): number | string {
     try {
-        const counter1 = BigInt(firstPass);
-        const counter2 = BigInt(secondPass);
+        const seconds = compareTimestamps(firstPass[1], secondPass[1]);
+        const counter1 = BigInt(Number(firstPass[0]));
+        const counter2 = BigInt(Number(secondPass[0]));
         const deltaCounter = counter2 - counter1;
         const deltaBits = deltaCounter * 8n;
-        const mbps = deltaBits / 30n / 1000000n;
+        const mbps = deltaBits / seconds / 1000000n;
         return Number(mbps);
     } catch (error: any) {
         return `Error: ${error.message}`;
     }
+}
+
+function compareTimestamps(timestamp1: number, timestamp2: number): bigint {
+    const differenceInMilliseconds = Math.abs(Number(timestamp1) - Number(timestamp2)); 
+    const differenceInSeconds = Math.floor(differenceInMilliseconds / 1000);
+    return BigInt(differenceInSeconds);
 }
 
 export function initializeSimpleReport(data: iTrafficData): { simpleReport: iTrafficReport, trafficReportTypes: string[] } {
@@ -148,4 +177,8 @@ export function initializeSimpleReport(data: iTrafficData): { simpleReport: iTra
         }
     }
     return { simpleReport, trafficReportTypes };
+}
+
+export function createEmptyArray(n: number): Array<any[]> {
+    return Array.from({ length: n }, () => []);
 }

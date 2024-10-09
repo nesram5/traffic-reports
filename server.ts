@@ -4,12 +4,12 @@ import fs from 'fs';
 import path from 'path';
 import cors from 'cors';
 import { exec } from "child_process";
-import { connectDB }  from './modules/handlerDB/handler';
+import { connectDB }  from './modules/handlerDB/connect';
+import { fetchTrafficDataFromDB } from './modules/handlerDB/fetch';
 import { scheduleExecution } from './modules/schedule/task';
 import { router } from './modules/router/routes';
-import { testing1 } from './modules/traffic-report/main';
 
-const list_devices = path.join(__dirname, './modules/trafficReport/data/list_devices.json');
+const list_devices = path.join(__dirname, './modules/traffic-report/data/list_devices.json');
 const app = express();
 const port = process.env.PORT;
 
@@ -30,19 +30,16 @@ app.listen(port, () => {
         console.error('File does not exist:', list_devices);
         return null; 
     }
-    //connectDB();
+    connectDB();
     console.log(`Server is running on ${process.env.SERVER}`);
-    /*exec(`explorer ${process.env.SERVER}`, (error, stdout, stderr) => {
+    exec(`explorer ${process.env.SERVER}`, (error, stdout, stderr) => {
         if (error) {
             console.error(`error: ${error.message}`);
             return;
         }
-        if (stderr) {
-            console.error(`stderr: ${stderr}`);
-            return;
-        }
-    });*/
-    //testing1();
-    //scheduleExecution();
+    });
+    fetchTrafficDataFromDB()
+    scheduleExecution();
+
 })
 

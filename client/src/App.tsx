@@ -1,6 +1,6 @@
 import './css/global.scss';
 import { useState } from 'react';
-import { TrafficReportDropDown } from './modules/reports/test';
+import { TrafficReportDropDown } from './modules/reports/list/drop-down-list';
 import { GetReport } from './modules/reports/get/get-report';
 
 function App() {
