@@ -1,5 +1,7 @@
 {
 	"compilerOptions": {
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
 		"module": "es2020",
 		"target": "es2020",
 		"experimentalDecorators": true,
