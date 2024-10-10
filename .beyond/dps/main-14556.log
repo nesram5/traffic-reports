@@ -1,0 +1,7 @@
+Dynamic processors logs:
+
+"ts.compiler" took 5671 ms. to process
+"ts.compiler" took 5965 ms. to process
+"processor.sources.options" took 5975 ms. to process
+"processor.sources.options" took 11428 ms. to process
+"ts.compiler" took 4956 ms. to process

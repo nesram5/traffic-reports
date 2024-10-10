@@ -1,0 +1,64 @@
+const fs = require('fs');
+const path = require('path');
+
+// Define the input and output file paths
+const inputFilePath = path.join(__dirname, './list_devices.json');
+const outputFilePath = path.join(__dirname, 'output.json');
+
+// Read the input JSON file
+fs.readFile(inputFilePath, 'utf8', (err, data) => {
+    if (err) {
+        console.error('Error reading input file:', err);
+        return;
+    }
+
+    try {
+        // Parse the JSON data
+        const deviceData = JSON.parse(data);
+
+        // Add 'prefered_interval' only to specific IP addresses
+        const updatedDeviceData = Object.entries(deviceData).reduce((acc, [key, value]) => {
+            const { ip } = value;
+
+            // Check for specific IP addresses
+            if (ip === "10.0.0.9" || ip === "10.0.0.17") {
+                acc[key] = { ...value, prefered_interval: 30000 };
+            } else {
+                acc[key] = { ...value,  prefered_interval: 15000 };  // No prefered_interval added for other IPs
+            }
+            return acc;
+        }, {});
+
+        // Custom stringify function to maintain OID formatting in a single line
+        const formattedJSON = JSON.stringify(updatedDeviceData, (key, value) => {
+            if (Array.isArray(value) && key === 'oid') {
+                return JSON.stringify(value);
+            }
+            return value;
+        }, 4).replace(/"(\[\[.*?\]\])"/g, '$1'); // Remove extra quotes around array
+
+        // Write the updated data to the output file
+        fs.writeFile(outputFilePath, formattedJSON, 'utf8', (writeErr) => {
+            if (writeErr) {
+                console.error('Error writing to output file:', writeErr);
+                return;
+            }
+            console.log('Output successfully written to', outputFilePath);
+        });
+
+    } catch (parseError) {
+        console.error('Error parsing JSON data:', parseError);
+    }
+});
+
+function saveVariableToFile(variable, fileName) {
+    const filePath = path.join(__dirname, `${fileName}.txt`);
+
+    fs.writeFile(filePath, JSON.stringify(variable), 'utf8', (err) => {
+        if (err) {
+            console.error('Error writing to file', err);
+            return;
+        }
+        console.log('Variable saved successfully');
+    });
+}

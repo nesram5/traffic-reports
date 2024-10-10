@@ -1,6 +1,6 @@
 import * as express from 'express';
 import { Connections } from './connections';
-import { routes, hmr } from '$[scope]server/routes';
+import { routes, hmr } from 'server/routes';
 
 export class Server {
 	#instance;

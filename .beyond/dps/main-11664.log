@@ -1,0 +1,6 @@
+Dynamic processors logs:
+
+"processors-registry" took 3239 ms. to process
+"ts.compiler" took 6117 ms. to process
+"ts.compiler" took 5096 ms. to process
+"ts.compiler" took 5110 ms. to process
