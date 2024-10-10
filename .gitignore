@@ -1,17 +1,16 @@
-#
-.env
-node_modules
-client/node_modules
-modules/traffic-report/data/list_devices.json
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-*.bak
-
-
+# dependencies
+/client/node_modules
+/server/node_modules
 /.pnp
 .pnp.js
-
+.vscode
 # testing
 /coverage
+
+# production
+/build
 
 # misc
 .DS_Store

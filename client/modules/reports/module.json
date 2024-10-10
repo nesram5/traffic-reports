@@ -1,0 +1,23 @@
+{
+  "name": "reports",
+  "description": "Main Page",
+  "widget": {
+    "route": "/report",
+    "is": "page",
+    "scss": {
+      "path": "/widget/scss",
+      "files": [
+        "*"
+      ]
+    },
+    "ts": {
+      "path": "/widget/ts",
+      "files": [
+        "*"
+      ]
+    },
+    "element": {
+      "name": "report-page"
+    }
+  }
+}
