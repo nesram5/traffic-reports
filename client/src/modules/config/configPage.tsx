@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const ConfigurationPage = () => {
+export const ConfigurationPage = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -17,4 +17,4 @@ const ConfigurationPage = () => {
   );
 };
 
-export default ConfigurationPage;
+

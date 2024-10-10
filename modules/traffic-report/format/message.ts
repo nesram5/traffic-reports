@@ -2,7 +2,12 @@ import { iTrafficReport } from '../interfaces/traffic-data';
 
 
 export function detailed_report(detailedReport: iTrafficReport, trafficReportTypes: string[]): string {
-    const startTime = new Date().toLocaleTimeString();
+    const startTime = new Date().toLocaleTimeString('es-VE', {
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: true,
+      }).replace('AM', 'a. m.').replace('PM', 'p. m.');
+      
     let resultText = `\n\n\n\n------ _Reporte detallado_ -------\n`;
     let footer = `\n-------- _Estadísticas a la hora ${startTime}_ ---------\n`;
       

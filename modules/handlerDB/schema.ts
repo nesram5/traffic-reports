@@ -11,3 +11,10 @@ const compiledTrafficDataSchema = new mongoose.Schema({
     ]
 });
 export const CompTrafficData = mongoose.model('compiledtraffic', compiledTrafficDataSchema);
+
+const UserSchema = new mongoose.Schema({
+    username: String,
+    password: String,
+  });
+  
+ export const User = mongoose.model('User', UserSchema);

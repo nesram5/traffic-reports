@@ -1,6 +1,4 @@
-import exp from "constants";
-
-export interface iTrafficData {
+export interface ITrafficData {
     [key: string]: {
         ip: string;
         oid: string[];
@@ -8,16 +6,30 @@ export interface iTrafficData {
         type: string;
         group: string;
         substract: string
+        prefered_interval: number;
     };
 }
-interface TrafficType {
+export interface ITrafficType {
     group: string;
     name: string;
     mbps: number | string;
     substract: string 
 }
+
+export interface ITrafficDataSplit {
+    deviceListTime01: ITrafficData;
+    interval01: number;
+    deviceListTime02: ITrafficData;
+    interval02: number;
+}
+
+export interface ISplitReport{
+    simpleReport: iTrafficReport;
+    detailedReport: iTrafficReport;
+}
+
 export interface iTrafficReport {
-    [key: string]: TrafficType[];
+    [key: string]: ITrafficType[];
 }
 
 export interface IMonthGroup {

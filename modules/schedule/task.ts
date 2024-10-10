@@ -3,12 +3,12 @@ import { autoGetReport } from '../traffic-report/main';
 // Automatic execute functions
 async function executeTwicePerHour() {
   await autoGetReport();
-  console.log("Function executed at:", new Date());
+  console.log("Function executed at:", new Date().toLocaleTimeString());
 }
 
 async function executeEvery5Min() {
   fetchTrafficDataFromDB();
-  console.log("Function executed at:", new Date());
+  console.log("Function executed at:", new Date().toLocaleTimeString());
 }
 
 function getTimeUntilNextExecution(hourlyMinutes: number) {

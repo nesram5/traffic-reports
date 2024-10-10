@@ -8,6 +8,7 @@ import { connectDB }  from './modules/handlerDB/connect';
 import { fetchTrafficDataFromDB } from './modules/handlerDB/fetch';
 import { scheduleExecution } from './modules/schedule/task';
 import { router } from './modules/router/routes';
+import { autoGetReport } from './modules/traffic-report/main';
 
 const list_devices = path.join(__dirname, './modules/traffic-report/data/list_devices.json');
 const app = express();
@@ -21,7 +22,7 @@ app.use(express.static(path.resolve(__dirname, './client/build')));
 app.use('/', router);
 app.use('/get-report', router);
 app.use('/api/traffic', router);
-
+app.post('/api/login', router);
 
 // Start the server
 app.listen(port, () => {
@@ -38,8 +39,9 @@ app.listen(port, () => {
             return;
         }
     });
-    fetchTrafficDataFromDB()
-    scheduleExecution();
+    //autoGetReport();
+    //fetchTrafficDataFromDB()
+    //scheduleExecution();
 
 })
 
