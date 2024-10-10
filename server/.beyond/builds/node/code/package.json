@@ -4,30 +4,6 @@
   "title": "Traffic Report Server",
   "description": "",
   "license": "ISC",
-  "languages": {
-    "default": "en",
-    "supported": [
-      "en",
-      "es"
-    ]
-  },
-  "modules": {
-    "path": "modules"
-  },
-  "deployment": {
-    "distributions": [
-      {
-        "name": "node",
-        "environment": "development",
-        "platform": "node",
-        "ports": {
-          "bundles": 6571,
-          "http": 6572,
-          "inspect": 6573
-        }
-      }
-    ]
-  },
   "dependencies": {
     "@beyond-js/kernel": "~0.1.9",
     "dotenv": "^16.4.5",
@@ -44,5 +20,10 @@
     "@types/snmp-native": "^1.2.5",
     "fs": "^0.0.1-security",
     "path": "^0.12.7"
-  }
+  },
+  "static": {},
+  "exports": {
+    "./config": "./config.js"
+  },
+  "uimport": true
 }

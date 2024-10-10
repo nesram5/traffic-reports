@@ -1,0 +1,10 @@
+{
+  "node": {
+    "platform": "node",
+    "environment": "development",
+    "base": "D:\\traffic-reports\\server\\.beyond\\builds\\node",
+    "archive": "D:\\traffic-reports\\server\\.beyond\\builds\\node\\build.zip",
+    "finalised": true,
+    "time": 1728602302937
+  }
+}
