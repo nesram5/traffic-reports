@@ -1,57 +1,37 @@
-import './css/global.scss';
-import React from 'react';
-import { useState } from 'react';
-import { TrafficReportDropDown } from '../../../list/drop-down-list';
-import { GetReport } from '../../../get/get-report';
-import { Login } from '../../../login/login';
-import { ConfigurationPage } from '../../../config/configPage';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link // Import the Link component
-} from "react-router-dom";
+import React, { useState } from 'react';
+import { Link } from 'pragmate-ui/components';
+import { TrafficReportDropDown } from './components/drop-down-list';
+import { GetReport } from './components/get-reports';
+import { Button } from 'pragmate-ui/components';
 
-export /*bundle*/
-
-function View(): JSX.Element {
-	const [showGetReport, setShowGetReport] = useState(false); // State to control the visibility of GetReport
+export /*bundle*/ function View(): JSX.Element {
+	const [showGetReport, setShowGetReport] = useState(false);
   
 	return (
-	  <Router>
-		<div className="parent">
-		  <div className="main-section">
-			<Routes>
-			<Route path="/config" element={<ConfigurationPage/>} />
-			  <Route path="/login" element={<Login />} />
-			  <Route path="/" element={
-				<>
-				{/* Link to the Login page */}
-				<Link to="/login" className="login-link">
-				  Login
-				</Link>
-				<Link to="/config" className="config-link">
-				  Configuration
-				</Link>
-				  <div className="title-and-button"> 
+		<main className="parent">
+			<div className="main-section">
+				<nav className="content-links">
+					<Link href="/login" className="login-link">
+						Login
+					</Link>
+					<Link href="/config" className="config-link">
+						Configuration
+					</Link>
+				</nav>
+				<section className="title-and-button"> 
 					<h1>Reportes de tráfico por hora</h1>
-					<button onClick={() => setShowGetReport(true)} className="generate-button">
-					  Generar ahora
-					</button>
-					
-				  </div>
-				  {showGetReport && (
+					<Button variant="secondary" onClick={() => setShowGetReport(true)} className="generate-button">
+						Generar ahora
+					</Button>
+				</section>
+				{showGetReport && (
 					<div className="report-section">
-					  <GetReport />
+						<GetReport />
 					</div>
-				  )}
-				  <TrafficReportDropDown /> 
-				</>
-			  } />
-			</Routes>
-		  </div>
-		</div>
-	  </Router>
+				)}
+				<TrafficReportDropDown /> 			  
+			</div>
+		</main>
 	);
   }
   

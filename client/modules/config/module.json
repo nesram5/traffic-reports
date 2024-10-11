@@ -1,0 +1,22 @@
+{
+  "name": "config",
+  "widget": {
+    "route": "/config",
+    "is": "page",
+    "scss": {
+      "path": "/scss",
+      "files": [
+        "*"
+      ]
+    },
+    "ts": {
+      "path": "/ts",
+      "files": [
+        "*"
+      ]
+    },
+    "element": {
+      "name": "config-page"
+    }
+  }
+}
