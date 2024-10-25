@@ -29,12 +29,12 @@ export function calculateTraffic(
         const result:any = [];
         for (let i = 0; i < samplesNumber; i += 2) {
             if (sampleData[i] && sampleData[i + 1]) { // Ensure that both elements exist
+                
                 result.push(convertToMbps(sampleData[i][name], sampleData[i + 1][name]));
             }
         }
         
-        
-        let avgResult: number = calculateAverage(result, substract, samplesNumber) ;     
+        let avgResult: number = calculateAverage(result) ;     
        
         //Export processed data
         pushDetailedReport(detailedReport, deviceType, group, name, avgResult, substract);
@@ -61,9 +61,8 @@ function addDetailedReportError(
     });
 }
 
-function calculateAverage(result: Array<number | string>, substract: string, samplesNumber: number): number {
-    const numberOfresults = samplesNumber / 2;
-    
+function calculateAverage(result: Array<number | string>): number {
+      
     let total = 0;
     let validSamples = 0;  // Count of valid (non-zero, non-invalid) samples
     const validValues: number[] = []; // Store valid numeric values

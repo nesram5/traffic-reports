@@ -9,6 +9,7 @@ body{
   font-family: Arial;  
   font-size: medium ;
   color: $fontColor;
+  zoom: 75%;
 }
 .parent {
   flex-direction: column;
@@ -42,25 +43,45 @@ h1 {
 }
 .group-fold { 
   display: inline-flex;
-  align-items: center;
-  padding: 5px;  
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5px; 
+  margin: 5px;
   cursor: pointer;
   height: 30px;
   border-radius: 40px;
-  border: 10px solid $pageBackground;
-  background: $groupColor; 
+  border: 10px $groupColor;
+  background-color: $groupColor; 
 }
 .group-fold:hover { 
   border-radius: 40px;
   border: 10px solid $hoverGroupColor;  
 }
-.expandable{
- margin-left: 60px;
+.fold-button {
+  background-color: $groupColor;
+  border: $groupColor;
+  border-radius: 40px;
+  font-size: larger;
 }
+.fold-button:hover {
+  border-radius: 40px;
+  border: 10px solid $hoverGroupColor;  
+}
+.expandable-group{
+ margin-left: 60px;
+ display: flex;
+ flex-direction: column-reverse;
+}
+.expandable-item{
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column-reverse;
+ }
 .container-list {
   display: flex;
   flex-direction: column-reverse; 
-  margin-top: 5%;   
+  margin-top: 5px;   
 }
 /*END DROP DOWN MENU*/
 
@@ -71,6 +92,7 @@ h1 {
   padding: 20px;
   border-radius: 40px;
   margin: 20px 0;
+  margin-right: 10px;
 }
 .code-box {
   padding: 16px;

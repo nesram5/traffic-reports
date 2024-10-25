@@ -5,8 +5,6 @@ import { submitToDB } from '../handlerDB/submit';
 import { fetchTrafficDataFromDB } from '../handlerDB/fetch';
 import { mergeResultSimplified , mergeReportsDetailed} from "./format/merge-results";
 import { simplified_report, detailed_report } from './format/message';
-import * as fs from 'fs';
-import * as path from 'path';
 
 
 export async function getReport(): Promise<{ simpleResult:string, detailedResult:string}>  {
@@ -70,8 +68,8 @@ export async function getReport(): Promise<{ simpleResult:string, detailedResult
 
 
     // Process the unified reports as needed
-    let simpleResult = simplified_report(unifiedSimpleReport, trafficReportTypes);
-    let detailedResult = detailed_report(unifiedDetailedReport, trafficReportTypes);
+    let simpleResult = simplified_report(unifiedSimpleReport, startTime, trafficReportTypes);
+    let detailedResult = detailed_report(unifiedDetailedReport, startTime, trafficReportTypes);
 
     const endTime = new Date().toLocaleTimeString();
 
@@ -83,5 +81,4 @@ export async function autoGetReport() {
 
     let {simpleResult: simpleResult, detailedResult: detailedResult} = await getReport();
     submitToDB(simpleResult, detailedResult);
-    fetchTrafficDataFromDB();
 }

@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import snmp from 'snmp-native';
-import { ITrafficData, ITrafficDataSplit, ISplitReport, iTrafficReport } from '../interfaces/traffic-data';
+import { ITrafficData, ITrafficDataSplit } from '../interfaces/traffic-data';
 
 
 export function readDeviceListComplete(): ITrafficData | string {

@@ -25,8 +25,8 @@ function getTimeUntilNextExecution(hourlyMinutes: number) {
 }
 
 export function scheduleExecution() {
-  const firstTargetMinutes = 16; // 9 minutes before :25
-  const secondTargetMinutes = 46; // 9 minutes before :55
+  const firstTargetMinutes = 22; // 9 minutes before :25
+  const secondTargetMinutes = 52; // 9 minutes before :55
 
   // Schedule the first execution of the function 9 minutes before :25
   const timeUntilNextFirstExecution = getTimeUntilNextExecution(firstTargetMinutes);

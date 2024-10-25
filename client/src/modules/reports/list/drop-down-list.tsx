@@ -35,7 +35,7 @@ const MonthGroup: React.FC<{ month: string, dayGroups: IDayGroup[] }> = ({ month
                 {month}
             </div>
             {isExpanded && (
-                <div className="expandable">
+                <div className="expandable-group">
                     {dayGroups.map((dayGroup, index) => (
                         <DayGroup key={index} day={dayGroup.day} groupItems={dayGroup.groupItems} />
                     ))}
@@ -59,7 +59,7 @@ const DayGroup: React.FC<{ day: string, groupItems: IGroupItem[] }> = ({ day, gr
                 {day}
             </div>
             {isExpanded && (
-                <div className="expandable">
+                <div className="expandable-group">
                     {groupItems.map((groupItem, index) => (
                         <GroupItem key={index} hour={groupItem.hour} items={groupItem.items} />
                     ))}
@@ -84,11 +84,13 @@ const GroupItem: React.FC<{ hour: string, items: IItem[] }> = ({ hour, items }) 
             {isExpanded && (
                 <div>
                     {items.map((item, index) => (
-                        <div key={index} className='expandable'>
+                        <section key={index} className='expandable-item'>
+                            <div className='get-report' >
                             <CodeBlock code={item.first.toString()} />
-                            <div></div>
                             <CodeBlock code={item.second.toString()} />
-                        </div>
+                            </div>
+                            <button className='fold-button' onClick={toggleExpand}>⬇️</button>
+                        </section>                        
                     ))}
                 </div>
             )}

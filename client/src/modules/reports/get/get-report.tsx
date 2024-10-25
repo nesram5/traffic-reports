@@ -11,7 +11,7 @@ export const GetReport: React.FC = () => {
     const handleStart = () => {
         setLoading(true);
         setSimpleResult('  Cargando el reporte... ');
-        setDetailedResult('Por favor espere 2 min');
+        setDetailedResult('Por favor espere 3 min');
         setProgress(0);
 
         let currentProgress = 0;
@@ -22,7 +22,7 @@ export const GetReport: React.FC = () => {
             if (currentProgress >= 100) {
                 clearInterval(interval);
             }
-        }, 1200); // Update every 600 ms for a 60-second total duration
+        }, 1800); // Update every 600 ms for a 60-second total duration
 
         fetch('/get-report')
             .then(response => response.json())
@@ -47,13 +47,13 @@ export const GetReport: React.FC = () => {
 
     return (
         <div>
-            {progress == 100 && (
+           
             <div className="get-report">
                 {/* Display the results in CodeBlock components */}
                 <CodeBlock code={simpleResult} />
                 <CodeBlock code={detailedResult} />
             </div>
-            )}
+            
             {/* Conditionally render the progress bar */}
             {progress < 100 && (
                 <div className="progress">
