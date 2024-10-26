@@ -1,6 +1,7 @@
 import 'dotenv/config'
 import express from 'express';
 import { WebSocketServer } from 'ws';
+import https from 'https';
 import fs from 'fs';
 import path from 'path';
 import cors from 'cors';
@@ -15,6 +16,13 @@ const zabbix_list_devices = path.join(__dirname, 'data/zabbix_list_devices.json'
 const app = express();
 const port: number = Number(process.env.PORT);
 const address: string = String(process.env.SERVER);
+
+const options = {
+    key: fs.readFileSync(path.join(__dirname, "key.pem")),
+    cert: fs.readFileSync(path.join(__dirname, "cert.pem"))
+};
+const server = https.createServer(options, app);
+const wss = new WebSocketServer({ noServer: true });
 
 app.use(cors());
 app.use(express.json());
@@ -33,7 +41,7 @@ function getTrafficData() {
     return JSON.parse(data);
 }
 
-const wss = new WebSocketServer({ noServer: true });
+
 
 wss.on('connection', (ws) => {
     console.log('New WebSocket connection established');
@@ -45,11 +53,12 @@ wss.on('connection', (ws) => {
     setInterval(() => {
         const updatedData = getTrafficData();
         ws.send(JSON.stringify(updatedData));
-    }, 60000); // 60000ms = 1 minute
+    }, 30000); // 60000ms = 1 minute
 })
 
+
 // Start the server
-const server = app.listen(port, address, () => {
+server.listen(port, address, () => {
     
     if (!fs.existsSync(snmp_list_devices)) {
         console.error('File does not exist:', snmp_list_devices);

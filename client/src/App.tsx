@@ -5,7 +5,7 @@ import { GetReport } from './modules/reports/get/get-report';
 
 function App() {
   const [showGetReport, setShowGetReport] = useState(false);
-
+  document.title = "Traffic Reports Netcom";
   return (
       <main className="parent">
         <section className="main-section">

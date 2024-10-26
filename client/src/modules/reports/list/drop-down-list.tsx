@@ -116,8 +116,8 @@ export const TrafficReportDropDown: React.FC = () => {
         fetchInitialData();
 
         // Establish a WebSocket connection for real-time updates
-        //const socket = new WebSocket('ws://10.3.0.194:80/api/traffic-updates');
-        const socket = new WebSocket('ws://localhost:3001/api/traffic-updates');
+        const socket = new WebSocket('ws://10.3.0.194:80/api/traffic-updates');
+        //const socket = new WebSocket('ws://localhost:3001/api/traffic-updates');
 
         socket.onmessage = (event) => {
             const updatedData: IMonthGroup[] = JSON.parse(event.data);
