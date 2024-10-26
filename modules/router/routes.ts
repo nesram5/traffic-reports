@@ -37,7 +37,7 @@ router.get('/get-report-snmp', async (req, res) => {
     }
 });
 
-router.get('/get-report-snmp', async (req, res) => {
+router.get('/get-report-zabbix', async (req, res) => {
   try {
       const resultMessage = await getReportZabbix();
       res.json({ message: resultMessage });

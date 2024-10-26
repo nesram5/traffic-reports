@@ -24,7 +24,7 @@ export const GetReport: React.FC = () => {
             }
         }, 1800); // Update every 600 ms for a 60-second total duration
 
-        fetch('/get-report')
+        fetch('/get-report-zabbix')
             .then(response => response.json())
             .then(data => {
                 setProgress(100);
@@ -35,7 +35,7 @@ export const GetReport: React.FC = () => {
             .catch(error => {
                 setProgress(50); 
                 console.error('Error:', error);
-                setSimpleResult('Error fetching SNMP data.');
+                setSimpleResult('Error fetching data.');
                 setDetailedResult('');
                 setLoading(false);
             });

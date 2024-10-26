@@ -7,7 +7,7 @@ import { connectDB }  from './modules/handlerDB/connect';
 import { fetchTrafficDataFromDB } from './modules/handlerDB/fetch';
 import { scheduleExecution } from './modules/schedule/task';
 import { router } from './modules/router/routes';
-import { autoGetReport } from './modules/snmp-report/main';
+import { autoGetReportSnmp } from './modules/snmp-report/main';
 
 const snmp_list_devices = path.join(__dirname, 'data/snmp_list_devices.json');
 const zabbix_list_devices = path.join(__dirname, 'data/zabbix_list_devices.json');
@@ -21,7 +21,8 @@ app.use(express.static(path.resolve(__dirname, './client/build')));
 
 //Declaration of API's.
 app.use('/', router);
-app.use('/get-report', router);
+app.use('/get-report-zabbix', router);
+app.use('/get-report-snmp', router);
 app.use('/api/traffic', router);
 app.post('/api/login', router);
 
