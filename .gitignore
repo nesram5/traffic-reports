@@ -2,8 +2,8 @@
 .env
 node_modules
 client/node_modules
-modules/traffic-report/data/list_devices.json
-
+data/snmp_list_devices.json
+data/zabbix_list_devices.json
 *.bak
 
 

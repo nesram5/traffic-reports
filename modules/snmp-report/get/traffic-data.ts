@@ -5,7 +5,7 @@ import { ITrafficData, ITrafficDataSplit } from '../interfaces/traffic-data';
 
 
 export function readDeviceListComplete(): ITrafficData | string {
-    const filePath = path.join(__dirname, '../data/list_devices.json');
+    const filePath = path.join(__dirname, '../../../data/snmp_list_devices.json');
 
     try {
         const data = fs.readFileSync(filePath, 'utf8');
@@ -27,7 +27,7 @@ export function readDeviceListComplete(): ITrafficData | string {
 
 
 export function readDeviceListByTimeInterval(): ITrafficDataSplit | string {
-    const filePath = path.join(__dirname, '../data/list_devices.json');
+    const filePath = path.join(__dirname, '../../../data/snmp_list_devices.json');
 
     try {
         const data = fs.readFileSync(filePath, 'utf8');

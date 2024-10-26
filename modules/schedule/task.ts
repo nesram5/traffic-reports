@@ -1,8 +1,9 @@
 import { fetchTrafficDataFromDB }  from '../handlerDB/fetch';
-import { autoGetReport } from '../traffic-report/main';  
+import { autoGetReportSnmp } from '../snmp-report/main';  
+import { autoGetReportZabbix } from '../zabbix-report/main';
 // Automatic execute functions
 async function executeTwicePerHour() {
-  await autoGetReport();
+  await autoGetReportZabbix();
   console.log("Function executed at:", new Date().toLocaleTimeString());
 }
 

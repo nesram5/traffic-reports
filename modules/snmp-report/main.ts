@@ -2,12 +2,11 @@ import { ISplitReport } from "./interfaces/traffic-data";
 import { readDeviceListComplete, readDeviceListByTimeInterval } from './get/traffic-data';
 import { initializeSimpleReport, fechReport } from './get/fetch-from-device';
 import { submitToDB } from '../handlerDB/submit';
-import { fetchTrafficDataFromDB } from '../handlerDB/fetch';
 import { mergeResultSimplified , mergeReportsDetailed} from "./format/merge-results";
 import { simplified_report, detailed_report } from './format/message';
 
 
-export async function getReport(): Promise<{ simpleResult:string, detailedResult:string}>  {
+export async function getReportSnmp(): Promise<{ simpleResult:string, detailedResult:string}>  {
     //Set max total time for the report
     const expectedTime = 180000;
 
@@ -77,8 +76,8 @@ export async function getReport(): Promise<{ simpleResult:string, detailedResult
     return { simpleResult, detailedResult}
 }
 
-export async function autoGetReport() {
+export async function autoGetReportSnmp() {
 
-    let {simpleResult: simpleResult, detailedResult: detailedResult} = await getReport();
+    let {simpleResult: simpleResult, detailedResult: detailedResult} = await getReportSnmp();
     submitToDB(simpleResult, detailedResult);
 }
