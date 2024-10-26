@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { CodeBlock } from '../../copy-box/copy';
-
 // Data interfaces
 interface IItem {
     first: string;
@@ -114,10 +113,10 @@ export const TrafficReportDropDown: React.FC = () => {
         }
 
         fetchInitialData();
-
+        
         // Establish a WebSocket connection for real-time updates
-        const socket = new WebSocket('ws://10.3.0.194:80/api/traffic-updates');
-        //const socket = new WebSocket('ws://localhost:3001/api/traffic-updates');
+        const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
+        const socket = new WebSocket(`${protocol}://10.3.0.194/api/traffic-updates`);
 
         socket.onmessage = (event) => {
             const updatedData: IMonthGroup[] = JSON.parse(event.data);
