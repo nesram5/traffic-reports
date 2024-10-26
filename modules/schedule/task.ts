@@ -4,12 +4,13 @@ import { autoGetReportZabbix } from '../zabbix-report/main';
 // Automatic execute functions
 async function executeTwicePerHour() {
   await autoGetReportZabbix();
+  fetchTrafficDataFromDB();
   console.log("Function executed at:", new Date().toLocaleTimeString());
 }
 
 async function executeEvery5Min() {
-  fetchTrafficDataFromDB();
-  console.log("Function executed at:", new Date().toLocaleTimeString());
+  //fetchTrafficDataFromDB();
+  //console.log("Function executed at:", new Date().toLocaleTimeString());
 }
 
 function getTimeUntilNextExecution(hourlyMinutes: number) {
@@ -26,8 +27,8 @@ function getTimeUntilNextExecution(hourlyMinutes: number) {
 }
 
 export function scheduleExecution() {
-  const firstTargetMinutes = 22; // 9 minutes before :25
-  const secondTargetMinutes = 52; // 9 minutes before :55
+  const firstTargetMinutes = 25; // 9 minutes before :25
+  const secondTargetMinutes = 55; // 9 minutes before :55
 
   // Schedule the first execution of the function 9 minutes before :25
   const timeUntilNextFirstExecution = getTimeUntilNextExecution(firstTargetMinutes);

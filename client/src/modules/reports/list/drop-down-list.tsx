@@ -100,29 +100,49 @@ const GroupItem: React.FC<{ hour: string, items: IItem[] }> = ({ hour, items }) 
 
 // Main component that renders the whole structure
 export const TrafficReportDropDown: React.FC = () => {
-   
-
     const [monthData, setMonthData] = useState<IMonthGroup[]>([]);
 
-    // Fetch traffic data from the API
     useEffect(() => {
-        async function fetchTrafficData() {
+        // Fetch initial data from /api/traffic
+        async function fetchInitialData() {
             try {
                 const response = await fetch('/api/traffic');
                 setMonthData(await response.json());
             } catch (error) {
-                console.error('Error fetching traffic data:', error);
+                console.error('Error fetching initial traffic data:', error);
             }
         }
 
-        fetchTrafficData();
+        fetchInitialData();
+
+        // Establish a WebSocket connection for real-time updates
+        //const socket = new WebSocket('ws://10.3.0.194:80/api/traffic-updates');
+        const socket = new WebSocket('ws://localhost:3001/api/traffic-updates');
+
+        socket.onmessage = (event) => {
+            const updatedData: IMonthGroup[] = JSON.parse(event.data);
+            setMonthData(updatedData);
+        };
+
+        socket.onclose = () => {
+            console.log('WebSocket connection closed');
+        };
+
+        socket.onerror = (error) => {
+            console.error('WebSocket error:', error);
+        };
+
+        // Cleanup WebSocket connection on component unmount
+        return () => {
+            socket.close();
+        };
     }, []);
 
     return (
         <div>
-                {monthData.map((monthGroup, index) => (
-                    <MonthGroup key={index} month={monthGroup.month} dayGroups={monthGroup.dayGroups} />
-                ))}
-       </div>
+            {monthData.map((monthGroup, index) => (
+                <MonthGroup key={index} month={monthGroup.month} dayGroups={monthGroup.dayGroups} />
+            ))}
+        </div>
     );
 };
