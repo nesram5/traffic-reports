@@ -1,6 +1,7 @@
 import puppeteer  from 'puppeteer-core';
 import path from 'path';
 import * as os from 'os';
+import { saveToLog } from '../logger/log';
 
 let browser: any;
 let page: any;
@@ -43,6 +44,7 @@ async function login() {
     }
     } catch (error) {
         console.error('Error connecting to the page:', error);
+        saveToLog(`Error connecting to the page: ${getCurrentTimestamp()}`);
         return ("Cannot connect to the web");
     }
 
@@ -61,6 +63,7 @@ export async function gatherMainData(pageLink: any) {
         await page.goto(pageLink); 
     } catch (error) {
         console.log(`Error opening link ${pageLink}: check the JSON file`);
+        saveToLog(`Error opening link ${pageLink}: check the JSON file ${getCurrentTimestamp()}`);
         console.error(`Error opening link ${pageLink}: check the JSON file`, error);
         return 'Navigation error'; 
     }
@@ -102,12 +105,15 @@ export function getDownloadValue(logs: any, timestamp: any) {
         if (diff < closestDiff) {
             closestDiff = diff;
             closestValue = byteValue;
+        } else{
+            saveToLog(`No matching timestamp found. LogTime= ${logTime} TargetTime= ${targetTime} \n` )
         }
     });
 
     if (closestValue !== null) {
         return closestValue / 1e6; 
     } else {
+        
         console.log('No matching timestamp found.');
         return null; 
     }

@@ -59,6 +59,7 @@ wss.on('connection', (ws) => {
 
 // Broadcast updates to all clients every 1 minute
 setInterval(() => {
+    fetchTrafficDataFromDB()
     const updatedData = getTrafficData();
     wss.clients.forEach((client) => {
         if (client.readyState === client.OPEN) {
@@ -77,10 +78,10 @@ httpsServer.listen(port, address, () => {
         console.error('File does not exist:', zabbix_list_devices);
         return null;
     }
-    //connectDB();
+    connectDB();
     console.log(`HTTPS server is running on https://${address}:${port}`);
-    //fetchTrafficDataFromDB();
-    //scheduleExecution();
+    fetchTrafficDataFromDB();
+    scheduleExecution();
 });
 
 // Start HTTP server to redirect to HTTPS

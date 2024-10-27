@@ -1,7 +1,8 @@
 import fs from 'fs';
 import path from 'path';
+import { saveToLog } from '../logger/log';
 import { submitToDB } from '../handlerDB/submit';
-import {gatherMainData, getDownloadValue, getCurrentTimestamp,closeBrowser } from './get';
+import {gatherMainData, getDownloadValue, getCurrentTimestamp,closeBrowser, restoreToinit } from './get';
 import { summarizeMbpsAndExtractTypes } from './process';
 import { simplified_report, getCurrentTimeInUTCMinus4, detailed_report} from './message';
 
@@ -26,6 +27,7 @@ export async function getReportZabbix(attempt = 0): Promise<{simpleResult: strin
         const mainData = await gatherMainData(provider.link); 
         const mbpsValue = getDownloadValue(mainData, currentTimestamp); 
         if (mbpsValue === null && attempt < 2){
+            saveToLog(`Cannot connect to ${provider.link} value is NULL at ${startTime}\n` )
             return getReportZabbix(attempt + 1)
         }
 
@@ -48,4 +50,6 @@ export async function autoGetReportZabbix() {
 
     let {simpleResult: simpleResult, detailedResult: detailedResult} = await getReportZabbix();
     submitToDB(simpleResult, detailedResult);
+    restoreToinit();
 }
+

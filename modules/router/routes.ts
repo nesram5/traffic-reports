@@ -40,8 +40,8 @@ router.get('/get-report-snmp', async (req, res) => {
 router.get('/get-report-zabbix', async (req, res) => {
   try {
       const resultMessage = await getReportZabbix();
-      res.json({ message: resultMessage });
       restoreToinit();
+      res.json({ message: resultMessage });      
   } catch (error) {
       console.error('Error during Zabbix scan:', error);
       res.status(500).json({ error: 'Error during Zabbix scan.' });
