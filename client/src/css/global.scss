@@ -1,6 +1,7 @@
 $pageBackground:  #1c1d23;
 $fontColor: white;
-$groupColor: #5c3f55;
+$groupColorLight: #5c3f55;
+$groupColor: #926387;
 $hoverGroupColor: #a0a0a0;
 $buttonGenerateRep:  #007bff;
 
@@ -31,7 +32,7 @@ h1 {
 
 .title-and-button {
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   flex-direction: column;
   align-content: center;
   align-items: center;
@@ -54,6 +55,10 @@ h1 {
   border: 10px $groupColor;
   background-color: $groupColor; 
 }
+.group-fold.expanded {
+  background-color: $groupColorLight; 
+  border: 10px $groupColorLight;
+}
 .group-fold:hover { 
   border-radius: 40px;
   border: 10px solid $hoverGroupColor;  
@@ -62,7 +67,12 @@ h1 {
   background-color: $groupColor;
   border: $groupColor;
   border-radius: 40px;
-  font-size: larger;
+  font-family: Arial;  
+  font-size: medium ;
+  width: 100%;
+  margin: 5px;
+  padding: 5px;
+  align-self: end;
 }
 .fold-button:hover {
   border-radius: 40px;
@@ -73,6 +83,7 @@ h1 {
  display: flex;
  flex-direction: column-reverse;
 }
+
 .expandable-item{
   margin-left: 5%;
   display: flex;
@@ -164,7 +175,7 @@ h1 {
 
 @media (max-width: 768px) {
   body {
-    font-size: small;
+    font-size: medium;
   }
   
   .main-section {
@@ -173,7 +184,7 @@ h1 {
 
   .title-and-button {
     flex-direction: column;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
     align-items: center;
   }
 
@@ -182,12 +193,16 @@ h1 {
     margin: 3px;
     height: 25px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: medium;
   }
 
   .fold-button {
-    font-size: medium;
+    font-family: Arial;  
+    font-size: medium ;
+    width: 100%;
+    margin: 5px;
     padding: 5px;
+    align-self: end;
   }
 
   .expandable-group,

@@ -22,7 +22,7 @@ export const GetReport: React.FC = () => {
             if (currentProgress >= 100) {
                 clearInterval(interval);
             }
-        }, 1800); // Update every 600 ms for a 60-second total duration
+        }, 300); // Update every 600 ms for a 60-second total duration
 
         fetch('/get-report-zabbix')
             .then(response => response.json())

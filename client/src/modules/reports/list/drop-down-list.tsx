@@ -30,14 +30,15 @@ const MonthGroup: React.FC<{ month: string, dayGroups: IDayGroup[] }> = ({ month
 
     return (
         <div className='container-list'>
-            <div className="group-fold" onClick={toggleExpand} style={{ fontWeight: 'bold' }}>
+             <div className={`group-fold ${isExpanded ? 'expanded' : ''}`} onClick={toggleExpand} style={{ fontWeight: 'bold' }}>
                 {month}
             </div>
             {isExpanded && (
                 <div className="expandable-group">
                     {dayGroups.map((dayGroup, index) => (
                         <DayGroup key={index} day={dayGroup.day} groupItems={dayGroup.groupItems} />
-                    ))}
+                    ))}                    
+                    <button className='fold-button' onClick={toggleExpand}>⬇️ cerrar {month}</button>
                 </div>
             )}
         </div>
@@ -54,14 +55,16 @@ const DayGroup: React.FC<{ day: string, groupItems: IGroupItem[] }> = ({ day, gr
 
     return (
         <div className='container-list'>
-            <div className="group-fold"  onClick={toggleExpand}>
+            <div className={`group-fold ${isExpanded ? 'expanded' : ''}`} onClick={toggleExpand}>
                 {day}
             </div>
             {isExpanded && (
                 <div className="expandable-group">
                     {groupItems.map((groupItem, index) => (
                         <GroupItem key={index} hour={groupItem.hour} items={groupItem.items} />
-                    ))}
+                        
+                    ))}                    
+                    <button className='fold-button' onClick={toggleExpand}>⬇️ cerrar {day}</button>
                 </div>
             )}
         </div>
@@ -77,7 +80,7 @@ const GroupItem: React.FC<{ hour: string, items: IItem[] }> = ({ hour, items }) 
 
     return (
         <div className='container-list'>
-            <div className="group-fold" onClick={toggleExpand}>
+           <div className={`group-fold ${isExpanded ? 'expanded' : ''}`} onClick={toggleExpand}>
                 {hour}
             </div>
             {isExpanded && (
@@ -88,7 +91,7 @@ const GroupItem: React.FC<{ hour: string, items: IItem[] }> = ({ hour, items }) 
                             <CodeBlock code={item.first.toString()} />
                             <CodeBlock code={item.second.toString()} />
                             </div>
-                            <button className='fold-button' onClick={toggleExpand}>⬇️</button>
+                            <button className='fold-button' onClick={toggleExpand}>⬇️ cerrar {hour}</button>
                         </section>                        
                     ))}
                 </div>
