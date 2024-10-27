@@ -11,7 +11,7 @@ export const GetReport: React.FC = () => {
     const handleStart = () => {
         setLoading(true);
         setSimpleResult('  Cargando el reporte... ');
-        setDetailedResult('Por favor espere 3 min');
+        setDetailedResult('Por favor espere 30 sec');
         setProgress(0);
 
         let currentProgress = 0;
@@ -22,7 +22,7 @@ export const GetReport: React.FC = () => {
             if (currentProgress >= 100) {
                 clearInterval(interval);
             }
-        }, 300); // Update every 600 ms for a 60-second total duration
+        }, 30); // Update every 600 ms for a 60-second total duration
 
         fetch('/get-report-zabbix')
             .then(response => response.json())
