@@ -82,40 +82,46 @@ export async function closeBrowser() {
     }
 }
 
-export function getDownloadValue(logs: any, timestamp: any) {
+export function getDownloadValue(logs: any, targetTime: any) {
+    const MATCH_THRESHOLD_MS = 181000;
+
     if (typeof logs !== 'string') {
         console.error('The logs parameter should be a string.');
-        return null; 
+        return null;
     }
 
     const lines = logs.split('\n').filter(line => line.trim() !== '');
-    let closestValue = null;
-    let closestDiff = Infinity;
-    const targetTime = new Date(timestamp).getTime();
+    if (lines.length < 2) {
+        console.error('Insufficient log data');
+        return null;
+    }
+    const logLine = lines[1]; // Use the second line
 
-    lines.forEach(line => {
-        const parts = line.split(' ');
-        if (parts.length < 4) return; 
 
-        const logTime = new Date(parts[0] + ' ' + parts[1]).getTime();
-        const byteValue = parseInt(parts[3], 10);
+    const parts = logLine.trim().split(' ');
+    if (parts.length < 4) {
+        console.error('Invalid log line format.');
+        return null;
+    }
 
-        const diff = Math.abs(logTime - targetTime);
+    const logTime = new Date(`${parts[0]} ${parts[1]}`).getTime();
+    const byteValue = parseInt(parts[3], 10);
 
-        if (diff < closestDiff) {
-            closestDiff = diff;
-            closestValue = byteValue;
-        } else{
-            saveToLog(`No matching timestamp found. LogTime= ${logTime} TargetTime= ${targetTime} \n` )
-        }
-    });
+    if (isNaN(logTime) || isNaN(byteValue)) {
+        console.error('Failed to parse log time or byte value.');
+        return null;
+    }
 
-    if (closestValue !== null) {
-        return closestValue / 1e6; 
+    // Calculate time difference
+    const diff = Math.abs(logTime - targetTime);
+    
+    // Check if the log time is within the match threshold
+    if (diff < MATCH_THRESHOLD_MS) {
+        return byteValue / 1e6; // Return the closest value in MB
     } else {
-        
-        console.log('No matching timestamp found.');
-        return null; 
+        saveToLog(`'No matching timestamp found within the threshold.' DIFF = ${diff} logtime = ${logTime} targetime = ${targetTime}`);
+        console.log('No matching timestamp found within the threshold.');
+        return null;
     }
 }
 

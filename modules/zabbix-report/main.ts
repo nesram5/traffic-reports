@@ -24,8 +24,9 @@ export async function getReportZabbix(attempt = 0): Promise<{simpleResult: strin
 
     for (const key in providers) {
         const provider = providers[key];
-        const mainData = await gatherMainData(provider.link); 
-        const mbpsValue = getDownloadValue(mainData, currentTimestamp); 
+        const mainData = await gatherMainData(provider.link);         
+        const targetTime = new Date(currentTimestamp).getTime();
+        const mbpsValue = getDownloadValue(mainData, targetTime); 
         if (mbpsValue === null && attempt < 2){
             saveToLog(`Cannot connect to ${provider.link} value is NULL at ${startTime}\n` )
             return getReportZabbix(attempt + 1)
