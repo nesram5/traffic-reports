@@ -161,3 +161,68 @@ h1 {
   border-radius: 10px;
 }
 /*END GET REPORT*/
+
+@media (max-width: 768px) {
+  body {
+    font-size: small;
+  }
+  
+  .main-section {
+    padding: 15px;
+  }
+
+  .title-and-button {
+    flex-direction: column;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+
+  .group-fold {
+    padding: 3px;
+    margin: 3px;
+    height: 25px;
+    border-radius: 20px;
+    font-size: 12px;
+  }
+
+  .fold-button {
+    font-size: medium;
+    padding: 5px;
+  }
+
+  .expandable-group,
+  .expandable-item {
+    margin-left: 5%;
+  }
+
+  .container-list {
+    flex-direction: column-reverse;
+    margin-top: 3px;
+  }
+
+  .code-block {
+    padding: 15px;
+    border-radius: 20px;
+    margin: 10px 0;
+  }
+
+  .code-box {
+    font-size: 12px;
+    padding: 12px;
+    word-wrap: break-word;
+    white-space: break-spaces;
+  }
+
+  .copy-btn {
+    padding: 4px 10px;
+    font-size: 10px;
+  }
+
+  .generate-button {
+    padding: 8px 12px;
+  }
+
+  .get-report {
+    flex-direction: column;
+  }
+}
