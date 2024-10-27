@@ -12,7 +12,7 @@ function readJsonFile(filePath: any) {
 }
 
 
-export async function getReportZabbix(): Promise<{simpleResult: string, detailedResult: string}>{
+export async function getReportZabbix(attempt = 0): Promise<{simpleResult: string, detailedResult: string}>{
     const file = path.join(__dirname, '../../data/zabbix_list_devices.json');
     
     const providers = readJsonFile(file);
@@ -25,6 +25,9 @@ export async function getReportZabbix(): Promise<{simpleResult: string, detailed
         const provider = providers[key];
         const mainData = await gatherMainData(provider.link); 
         const mbpsValue = getDownloadValue(mainData, currentTimestamp); 
+        if (mbpsValue === null && attempt < 2){
+            return getReportZabbix(attempt + 1)
+        }
 
         results[key] = {
             ...provider,
